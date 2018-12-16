@@ -4,8 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<?php echo validation_errors(); ?>
-	<?php echo form_open('anggota/tambah'); ?>
+	<?php echo form_open('anggota/tambah/'); ?>
 	<pre>
 		<div>
 			<label>NIS</label>

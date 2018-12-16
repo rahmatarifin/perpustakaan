@@ -7,19 +7,25 @@ class Anggota extends ci_controller{
 	}
 
 	function index(){
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header');
 		$data['data'] = $this->m_anggota->tampildata();
-		$this->load->view('anggota/v_anggota', $data);
+		$this->load->view('anggota/anggota', $data);
+		$this->load->view('templates/v_footer');
 	}
 
 	function tambahanggota(){
-		$this->load->view('anggota/tambah', $data);
+		$this->load->view('anggota/tambah');
 	}
 
 
 	function tambah(){
-		$data = array('nis' => $this->input->post('nis'),
+		$data = array(
+			'nis' => $this->input->post('nis'),
 			'nama' => $this->input->post('nama'),
-			'alamat' => $this->input->post('alamat'));
+			'alamat' => $this->input->post('alamat')
+		);
 		$this->m_anggota->tambah($data);
 		redirect('anggota');
 	}
