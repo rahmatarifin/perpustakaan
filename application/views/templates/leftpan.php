@@ -30,7 +30,7 @@
                     <h3 class="menu-title">Transaksi</h3><!-- /.menu-title -->
 
                     <li>
-                        <a href="#"> <i class="menu-icon fa fa-tasks"></i>Peminjaman</a>
+                        <a href="<?php base_url(); ?>peminjaman"> <i class="menu-icon fa fa-tasks"></i>Peminjaman</a>
                     </li>
                     <li>
                         <a href="widgets.html"> <i class="menu-icon ti-email"></i>Pengembalian</a>

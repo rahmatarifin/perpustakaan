@@ -13,7 +13,7 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">Petugas</a></li>
-                            <li class="active">Update</li>
+                            <li class="active">Tambah</li>
                         </ol>
                     </div>
                 </div>
@@ -28,62 +28,58 @@
                   <div class="col-lg-6">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Update</strong> Data Petugas
+                        <strong>Tambah</strong> Petugas
                       </div>
                       
                       <div class="card-body card-block">
-                      <?php foreach ($data as $buku) { ?>
-                  
-                      	<form action="<?php echo base_url(); ?>buku_/update/" method="post">
 
-                        
+                      	<form action="<?php echo base_url(); ?>peminjaman/pinjam/" method="post">
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Kode Buku</label>
+                            	<label for="text-input" class=" form-control-label">Kode transaksi</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="kode_buku" value="<?php echo $buku->kode_buku; ?>" class="form-control">
-                              <small class="form-text text-muted">Kode Buku</small>
+                            	<input type="text" id="text-input" name="id_transaksi" class="form-control">
+                            	<small class="form-text text-muted">Kode Transaksi</small>
+                            </div>
+                          </div>
+
+
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">NIS</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                              <input type="text" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control">
+                              <small class="form-text text-muted">Nomor Induk Siswa</small>
                             </div>
                           </div>
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Judul</label>
+                            	<label for="text-input" class=" form-control-label">Kode Buku</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="judul" value="<?php echo $buku->judul; ?>" class="form-control">
-                              <small class="form-text text-muted">Judul Buku</small>
+                            	<input type="text" id="text-input" name="kode_buku" placeholder="kode buku" class="form-control">
+                            	<small class="form-text text-muted">Kode Buku</small>
                             </div>
                           </div>
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                            	<label for="text-input" class=" form-control-label">Pengarang</label>
+                            	<label for="text-input" class=" form-control-label">Judul</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="pengarang" placeholder="Username" class="form-control" value="<?php echo $buku->pengarang; ?>">
-                            	<small class="form-text text-muted">Pengarang Buku</small>
-                            </div>
-                          </div>
-
-                          <div class="row form-group">
-                            <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Deskripsi</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="descripstion" placeholder="Username" class="form-control" value="<?php echo $buku->description; ?>">
-                              <small class="form-text text-muted">Deskripsi Buku</small>
+                            	<input type="text" id="text-input" name="judul" class="form-control">
+                            	<small class="form-text text-muted">Judul Buku</small>
                             </div>
                           </div>
 
                           <div class="card-footer">
                           	<button type="submit" class="btn btn-primary btn-sm">Submit </button>
                           </div>                        
-
                         </form>            
-                      <?php } ?>
                       </div>
                     </div>                   
                   </div>

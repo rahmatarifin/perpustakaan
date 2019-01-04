@@ -18,7 +18,11 @@ class Petugas extends ci_controller{
 	}
 
 	function add_petugas(){
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header');
 		$this->load->view('petugas/tambah');
+		$this->load->view('templates/v_footer');
 	}
 
 	function add(){
@@ -26,16 +30,20 @@ class Petugas extends ci_controller{
 			'id_petugas' => $this->input->post('idpetugas'),
 			'nama' => $this->input->post('nama'),
 			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')
+			'password' => $this->input->post(md5('password'))
 			);
 		$this->m_petugas->tambah($data);
 		redirect('petugas');
 	}
 
 	function edit(){
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header');
 		$id_petugas = $this->uri->segment(3);
-		$data['data'] = $this->m_kategori->per_id($id_petugas);
+		$data['data'] = $this->m_petugas->per_id($id_petugas);
 		$this->load->view('petugas/update', $data);
+		$this->load->view('templates/v_footer');
 	}
 
 	function update(){
@@ -43,13 +51,13 @@ class Petugas extends ci_controller{
 		$data = array(
 			'nama' => $this->input->post('nama'),
 			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')
+			'password' => $this->input->post(md5('password'))
 			);
 	}
 
 	function hapus(){
 		$id_petugas = $this->uri->segment(3);
-		$this->m_kategori->hapus($id_petugas);
+		$this->m_petugas->hapus($id_petugas);
 		redirect('petugas');
 	}
 }

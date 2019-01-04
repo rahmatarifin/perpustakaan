@@ -32,49 +32,49 @@
                       </div>
                       
                       <div class="card-body card-block">
-                      <?php foreach ($data as $buku) { ?>
+                      <?php foreach ($data as $petugas) { ?>
                   
-                      	<form action="<?php echo base_url(); ?>buku_/update/" method="post">
+                      	<form action="<?php echo base_url(); ?>update/" method="post">
 
                         
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Kode Buku</label>
+                              <label for="text-input" class=" form-control-label">Kode petugas</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="kode_buku" value="<?php echo $buku->kode_buku; ?>" class="form-control">
-                              <small class="form-text text-muted">Kode Buku</small>
+                              <input type="hidden" id="text-input" name="kode_petugas" value="<?php echo $petugas->id_petugas; ?>" class="form-control">
+                              <small class="form-text text-muted">Nama</small>
                             </div>
                           </div>
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Judul</label>
+                              <label for="text-input" class=" form-control-label">Nama</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="judul" value="<?php echo $buku->judul; ?>" class="form-control">
-                              <small class="form-text text-muted">Judul Buku</small>
+                              <input type="text" id="text-input" name="nama" value="<?php echo $petugas->nama; ?>" class="form-control">
+                              <small class="form-text text-muted">Nama</small>
                             </div>
                           </div>
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                            	<label for="text-input" class=" form-control-label">Pengarang</label>
+                            	<label for="text-input" class=" form-control-label">Username</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="pengarang" placeholder="Username" class="form-control" value="<?php echo $buku->pengarang; ?>">
-                            	<small class="form-text text-muted">Pengarang Buku</small>
+                            	<input type="text" id="text-input" name="username" placeholder="Username" class="form-control" value="<?php echo $petugas->username; ?>">
+                            	<small class="form-text text-muted">Nomor induk mahasiswa</small>
                             </div>
                           </div>
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Deskripsi</label>
+                            	<label for="text-input" class=" form-control-label">Password</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="descripstion" placeholder="Username" class="form-control" value="<?php echo $buku->description; ?>">
-                              <small class="form-text text-muted">Deskripsi Buku</small>
+                            	<input type="password" id="text-input" name="password" placeholder="Password" class="form-control" value="<?php echo $petugas->password; ?>">
+                            	<small class="form-text text-muted">Password</small>
                             </div>
                           </div>
 

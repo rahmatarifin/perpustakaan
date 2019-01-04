@@ -27,15 +27,16 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
+                            <a href="<?php base_url(); ?>tambahanggota/">Tambah</a>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                    <thead>
+                    <thead align="center">
                       <tr>
                         <th>NIS</th>
                         <th>Nama</th>
                         <th>Alamat</th>
-                        <th>Aksi</th>
+                        <th colspan="2">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -43,8 +44,8 @@
                       <?php foreach($data as $anggota): ?>
                         <td><?php echo $anggota->nis; ?></td><td><?php echo $anggota->nama; ?></td>
                         <td><?php echo $anggota->alamat; ?></td>
-                        <td><a href="<?php base_url();?>anggota/edit/<?php echo $anggota->nis; ?>">Edit</a></td>
-                        <td><a href="<?php base_url();?>anggota/hapus/<?php echo $anggota->nis;?>">Hapus</a></td>
+                        <td><a href="<?php base_url();?>edit/<?php echo $anggota->nis; ?>"><i class="fa fa-pencil-square-o"></a></i></td>
+                        <td><a href="<?php base_url();?>hapus/<?php echo $anggota->nis;?>"><i class="fa fa-eraser"></i></a></td>
                       </tr>
                     <?php endforeach; ?>
                       

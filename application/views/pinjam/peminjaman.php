@@ -12,7 +12,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active">Anggota</li>
+                            <li class="active">Peminjaman</li>
                         </ol>
                     </div>
                 </div>
@@ -27,32 +27,27 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
-                            <a href="<?php echo base_url(); ?>buku_/tambahbuku">Tambah</a>
+                            <a href="<?php echo base_url(); ?>peminjaman/add_pinjam">Tambah</a>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
                       <tr>
+                        <th>Kode Peminjaman</th>
+                        <th>Tanggal Pinjam</th>
+                        <th>Tanggak Kembali</th>
+                        <th>NIS</th>
                         <th>Kode Buku</th>
-                        <th>Judul</th>
-                        <th>Pengarang</th>
-                        <th>Deskripsi</th>
-                        <th colspan="2">Aksi</th>
+                        <th>Judul</th>                        
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                      <?php foreach($data as $buku): ?>
-                        <td><?php echo $buku->kode_buku;?></td>
-                        <td><?php echo $buku->judul; ?><td>
-                        <td><?php echo $buku->pengarang; ?></td>
-                        <td><?php echo $buku->description; ?></td>
-                        <td>
-                            <a href="<?php base_url();?>buku_/edit/<?php echo $buku->kode_buku; ?>"><i class="fa fa-pencil-square-o"></i></a>
-                        </td>
-                        <td>
-                            <a href="<?php base_url();?>buku_/hapus/<?php echo $buku->kode_buku;?>"><i class="fa fa-eraser"></i></a>
-                        </td>
+                      <?php foreach($data as $pinjam): ?>
+                        <td><?php echo $pinjam->id_transaksi;?></td>
+                        <th><?php echo $pinjam->nis; ?></th>
+                        <th><?php echo $pinjam->kode_buku; ?></th>
+                        <td><?php echo $pinjam->judul; ?><td>                        
                       </tr>
                     <?php endforeach; ?>
                      

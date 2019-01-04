@@ -27,6 +27,7 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
+                            <a href="<?php echo base_url(); ?>petugas/add_petugas/">Tambah</a>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -36,6 +37,7 @@
                         <th>Nama</th>
                         <th>Username</th>
                         <th>Password</th>
+                        <th colspan="2">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -44,6 +46,8 @@
                         <td><?php echo $petugas->id_petugas; ?></td><td><?php echo $petugas->nama; ?></td>
                         <td><?php echo $petugas->username; ?></td>
                         <td><?php echo $petugas->password; ?></td>
+                        <td><a href="<?php base_url();?>edit/<?php echo $petugas->id_petugas; ?>"><i class="fa fa-pencil-square-o"></i></a></td>
+                        <td><a href="<?php base_url();?>petugas/hapus/<?php echo $petugas->id_petugas;?>"><i class="fa fa-eraser"></i></a></td>
                       </tr>
                     <?php endforeach; ?>
                       

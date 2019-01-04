@@ -16,7 +16,11 @@ class Anggota extends ci_controller{
 	}
 
 	function tambahanggota(){
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header');
 		$this->load->view('anggota/tambah');
+		$this->load->view('templates/v_footer');
 	}
 
 
@@ -31,9 +35,13 @@ class Anggota extends ci_controller{
 	}
 
 	function edit(){
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header');
 		$nis = $this->uri->segment(3);
 		$data['data'] = $this->m_anggota->per_nis($nis);
 		$this->load->view('anggota/update', $data);
+		$this->load->view('templates/v_footer');
 	}
 
 	function update(){
