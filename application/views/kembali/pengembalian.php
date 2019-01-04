@@ -25,7 +25,7 @@
 
 
                 <div class="row">
-                  <div class="col-lg-9">
+                  <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
                         <strong>Tambah</strong> Peminjaman
@@ -39,9 +39,15 @@
                             <div class="col col-md-3">
                               <label for="text-input" class=" form-control-label">Tanggal Pinjam</label>
                             </div>
-                            <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="id_transaksi" class="form-control" value="<?php echo date("y-m-d h:i:s");?>">
+                            <div class="col-12 col-md-3">
+                              <input type="text" id="text-input" name="tgl_pinjam" class="form-control" value="<?php echo date("y-m-d h:i:s");?>">
                               <small class="form-text text-muted">Tanggal Peminjaman Buku</small>
+                            </div>
+                            <div class="col col-md-3">
+                              <label for="text-input" class="form-control-label">Tanggal Kembali</label>
+                            </div>
+                            <div class="col-12 col-md-3">
+                              <input type="text" id="text-input" name="tgl_kembali" class="form-control" value="<?php echo date("y-m-d h:i:s"); ?>">
                             </div>
                           </div>
 
@@ -66,7 +72,7 @@
                             </div>
             
                             <div class="col-12 col-md-6">
-                              <input type="text" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control">
+                              <input type="text" id="text-input" name="nama" placeholder="Nama Anggota/Siswa" class="form-control">
                               <small class="form-text text-muted">Nama Anggota/Siswa</small>
                             </div>
                           </div>

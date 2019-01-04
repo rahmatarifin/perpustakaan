@@ -1,7 +1,8 @@
 <?php
-class Peminjaman extends ci_controller{
+class Pengembalian extends ci_controller{
 	function __construct(){
 		parent::__construct();
+		$this->load->model('m_pengembalian');
 		$this->load->model('m_peminjaman');
 	}
 
@@ -9,20 +10,16 @@ class Peminjaman extends ci_controller{
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header');
-		$data['data'] = $this->m_pinjam->tampildata();
+		$data['data'] = $this->m_peminjaman->tampildata();
 		$this->load->view('pinjam/peminjaman', $data);
 		$this->load->view('templates/v_footer');
 	}
 
-	function pinjam(){
-		
-	}
-
-	function add_pinjam(){
+	function add_pengembalian(){
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header');
-		$this->load->view('pinjam/tambah');
+		$this->load->view('kembali/pengembalian');
 		$this->load->view('templates/v_footer');
 	}
 }
