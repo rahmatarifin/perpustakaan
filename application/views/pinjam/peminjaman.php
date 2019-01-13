@@ -27,7 +27,7 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
-                            <a href="<?php echo base_url(); ?>peminjaman/add_pinjam">Tambah</a>
+                            <a href="<?php echo base_url(); ?>peminjaman/add_pinjam"><button class="btn btn-primary">Tambah</button></a>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -35,22 +35,38 @@
                       <tr>
                         <th>Kode Peminjaman</th>
                         <th>Tanggal Pinjam</th>
-                        <th>Tanggak Kembali</th>
                         <th>NIS</th>
                         <th>Kode Buku</th>
-                        <th>Judul</th>                        
+                        <th>Nama Anggota</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Alamat</th>
+                        <th>Judul</th>
+                        <th>Pengarang</th>
+                        <th>Deskripsi</th>
+                        <th>Denda</th>
+                        <th>Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                      <?php foreach($data as $pinjam): ?>
+                      <?php foreach($join as $pinjam): ?>
                         <td><?php echo $pinjam->id_transaksi;?></td>
-                        <th><?php echo $pinjam->nis; ?></th>
-                        <th><?php echo $pinjam->kode_buku; ?></th>
-                        <td><?php echo $pinjam->judul; ?><td>                        
+                        <td><?php echo $pinjam->tanggal_pinjam; ?></td>
+                        
+                        <td><?php echo $pinjam->nis; ?></td>
+                        <td><?php echo $pinjam->kode_buku; ?>
+                        </td>
+                        <td><?php echo $pinjam->nama_anggota; ?></td>
+                        <td><?php echo $pinjam->jk; ?></td>
+                        <td><?php echo $pinjam->alamat; ?></td>
+                        <td><?php echo $pinjam->judul; ?></td>
+                        <td><?php echo $pinjam->pengarang; ?></td>
+                        <td><?php echo $pinjam->description; ?></td>
+                        <td><?php echo $pinjam->denda; ?></td>
+                        <td><?php echo $pinjam->status ?></td>
+                        
                       </tr>
                     <?php endforeach; ?>
-                     
                     </tbody>
                   </table>
                         </div>

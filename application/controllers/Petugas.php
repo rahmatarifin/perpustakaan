@@ -27,10 +27,10 @@ class Petugas extends ci_controller{
 
 	function add(){
 		$data = array(
-			'id_petugas' => $this->input->post('idpetugas'),
-			'nama' => $this->input->post('nama'),
+			'id_petugas' => $this->input->post('id_petugas'),
+			'nama_petugas' => $this->input->post('nama_petugas'),
 			'username' => $this->input->post('username'),
-			'password' => $this->input->post(md5('password'))
+			'password' => md5($this->input->post('password'))
 			);
 		$this->m_petugas->tambah($data);
 		redirect('petugas');

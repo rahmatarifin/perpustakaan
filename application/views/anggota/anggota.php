@@ -27,14 +27,15 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
-                            <a href="<?php base_url(); ?>tambahanggota/">Tambah</a>
+                            <a href="<?php base_url(); ?>tambahanggota/"><button type="button" class="btn btn-primary">Tambah</button></a>
                         </div>
                         <div class="card-body">
-                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                  <table id="bootstrap-data-table" class="table table-striped table-bordered" align="center">
                     <thead align="center">
                       <tr>
                         <th>NIS</th>
-                        <th>Nama</th>
+                        <th>Nama Anggota</th>
+                        <th>Jenis Kelamin</th>
                         <th>Alamat</th>
                         <th colspan="2">Aksi</th>
                       </tr>
@@ -42,9 +43,11 @@
                     <tbody>
                       <tr>
                       <?php foreach($data as $anggota): ?>
-                        <td><?php echo $anggota->nis; ?></td><td><?php echo $anggota->nama; ?></td>
+                        <td><?php echo $anggota->nis; ?></td>
+                        <td><?php echo $anggota->nama_anggota; ?></td>
+                        <td><?php echo $anggota->jk; ?></td>
                         <td><?php echo $anggota->alamat; ?></td>
-                        <td><a href="<?php base_url();?>edit/<?php echo $anggota->nis; ?>"><i class="fa fa-pencil-square-o"></a></i></td>
+                        <td><a href="<?php base_url();?>anggota/edit/<?php echo $anggota->nis; ?>"><i class="fa fa-pencil-square-o"></a></i></td>
                         <td><a href="<?php base_url();?>hapus/<?php echo $anggota->nis;?>"><i class="fa fa-eraser"></i></a></td>
                       </tr>
                     <?php endforeach; ?>

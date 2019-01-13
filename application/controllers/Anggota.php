@@ -27,7 +27,8 @@ class Anggota extends ci_controller{
 	function tambah(){
 		$data = array(
 			'nis' => $this->input->post('nis'),
-			'nama' => $this->input->post('nama'),
+			'nama_anggota' => $this->input->post('nama_anggota'),
+			'Jk' => $this->input->post('jk'),
 			'alamat' => $this->input->post('alamat')
 		);
 		$this->m_anggota->tambah($data);
@@ -46,7 +47,8 @@ class Anggota extends ci_controller{
 
 	function update(){
 		$nis = $this->input->post('nis');
-		$data = array('nama' =>$this->input->post('nama'),
+		$data = array('nama_anggota' =>$this->input->post('nama_anggota'),
+			'jk' => $this->input->post('jk'),
 			'alamat' => $this->input->post('alamat')
 			);
 		$this->m_anggota->update($nis, $data);
@@ -56,6 +58,6 @@ class Anggota extends ci_controller{
 	function hapus(){
 		$nis = $this->uri->segment(3);
 		$this->m_anggota->hapus($nis);
-		redirect('anggota');
+		redirect(base_url('anggota'));
 	}
 }

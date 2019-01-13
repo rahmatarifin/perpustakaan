@@ -50,8 +50,20 @@
                             	<label for="text-input" class=" form-control-label">Nama</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="nama" placeholder="Nomor induk mahasiswa" class="form-control">
-                            	<small class="form-text text-muted">Nomor induk mahasiswa</small>
+                            	<input type="text" id="text-input" name="nama_anggota" placeholder="Nama siswa/anggota" class="form-control">
+                            	<small class="form-text text-muted">Nama siswa </small>
+                            </div>
+                          </div>
+
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Jenis Kelamin</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <select name="jk">
+                                  <option value="Laki-laki"> Laki-laki </option>
+                                  <option value="Perempuan"> Perempuan </option>
+                                </select>
                             </div>
                           </div>
 
@@ -60,8 +72,8 @@
                             	<label for="text-input" class=" form-control-label">Alamat</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="alamat" placeholder="Nomor induk mahasiswa" class="form-control">
-                            	<small class="form-text text-muted">Nomor induk mahasiswa</small>
+                            	<input type="text" id="text-input" name="alamat" placeholder="Alamat Siswa" class="form-control">
+                            	<small class="form-text text-muted">Alamat Siswa</small>
                             </div>
                           </div>
 

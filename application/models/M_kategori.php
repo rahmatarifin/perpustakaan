@@ -15,19 +15,19 @@ class M_kategori extends ci_model{
 	}
 
 	function per_id($id_kategori){
-		$this->db->where('id_kategori', $id_kategori);
+		$this->db->where('kode_kategori', $id_kategori);
 		$query = $this->db->get('kategori');
 		return $query->result();
 	}
 
 	function hapus($id_kategori){
-		$this->db->where('id_kategori', $id_kategori);
+		$this->db->where('kode_kategori', $id_kategori);
 		$hapus = $this->db->delete('kategori');
 		return $hapus;
 	}
 
 	function update($id_kategori, $data){
-		$this->db->where('idkategori', $id_kategori);
+		$this->db->where('kode_kategori', $id_kategori);
 		$update = $this->db->update('kategori', $data);
 		return $update;
 	}

@@ -40,7 +40,7 @@
                             	<label for="text-input" class=" form-control-label">Kode Petugas</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="kode_petugas" placeholder="Kode Petugas" class="form-control">
+                            	<input type="text" id="text-input" name="id_petugas" placeholder="Kode Petugas" class="form-control">
                             	<small class="form-text text-muted">Kode Petugas</small>
                             </div>
                           </div>
@@ -51,7 +51,7 @@
                               <label for="text-input" class=" form-control-label">Nama</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="nama" placeholder="Nama Petugas" class="form-control">
+                              <input type="text" id="text-input" name="nama_petugas" placeholder="Nama Petugas" class="form-control">
                               <small class="form-text text-muted">Nama</small>
                             </div>
                           </div>

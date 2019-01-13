@@ -12,7 +12,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active">Anggota</li>
+                            <li class="active">Petugas</li>
                         </ol>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
-                            <a href="<?php echo base_url(); ?>petugas/add_petugas/">Tambah</a>
+                            <a href="<?php echo base_url(); ?>petugas/add_petugas/"><button class="btn btn-primary">Tambah</button></a>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -43,7 +43,7 @@
                     <tbody>
                       <tr>
                       <?php foreach($data as $petugas): ?>
-                        <td><?php echo $petugas->id_petugas; ?></td><td><?php echo $petugas->nama; ?></td>
+                        <td><?php echo $petugas->id_petugas; ?></td><td><?php echo $petugas->nama_petugas; ?></td>
                         <td><?php echo $petugas->username; ?></td>
                         <td><?php echo $petugas->password; ?></td>
                         <td><a href="<?php base_url();?>edit/<?php echo $petugas->id_petugas; ?>"><i class="fa fa-pencil-square-o"></i></a></td>

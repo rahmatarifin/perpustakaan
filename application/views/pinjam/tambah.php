@@ -40,7 +40,7 @@
                               <label for="text-input" class=" form-control-label">Tanggal Pinjam</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="id_transaksi" class="form-control" value="<?php echo date("y-m-d h:i:s");?>">
+                              <input type="text" id="text-input" name="id_transaksi" class="form-control" >
                               <small class="form-text text-muted">Tanggal Peminjaman Buku</small>
                             </div>
                           </div>
@@ -61,12 +61,12 @@
                               <label for="text-input" class=" form-control-label">NIS</label>
                             </div>
                             <div class="col-12 col-md-3">
-                              <input type="text" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control">
+                              <input type="searc" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control">
                               <small class="form-text text-muted">Nomor Induk Siswa</small>
                             </div>
             
                             <div class="col-12 col-md-6">
-                              <input type="text" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control">
+                              <input type="text" id="text-input" name="nama" placeholder="Nomor Induk Siswa" class="form-control">
                               <small class="form-text text-muted">Nama Anggota/Siswa</small>
                             </div>
                           </div>

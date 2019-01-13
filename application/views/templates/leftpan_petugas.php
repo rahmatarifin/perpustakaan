@@ -19,15 +19,9 @@
                     <h3 class="menu-title">Data Inventaris</h3><!-- /.menu-title -->
                     <li>
                         <a href="<?php echo base_url(); ?>anggota/"> <i class="menu-icon fa fa-users"></i>Anggota</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url(); ?>petugas/"><i class="menu-icon fa fa-user"></i>Petugas</a>
-                    </li>
+                    </li>                    
                     <li>
                         <a href="<?php echo base_url(); ?>buku_"> <i class="menu-icon fa fa-book"></i>Buku</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url(); ?>kategori"> <i class="menu-icon fa fa-book"></i>Kategori</a>
                     </li>
 
                     <h3 class="menu-title">Transaksi</h3><!-- /.menu-title -->
@@ -36,7 +30,7 @@
                         <a href="<?php base_url(); ?>peminjaman"> <i class="menu-icon fa fa-tasks"></i>Peminjaman</a>
                     </li>
                     <li>
-                        <a href="<?php base_url(); ?>peminjaman/pengembalian"> <i class="menu-icon ti-email"></i>Pengembalian</a>
+                        <a href="<?php base_url(); ?>pengembalian"> <i class="menu-icon ti-email"></i>Pengembalian</a>
                     </li>
                     
                     <h3 class="menu-title">Extras</h3><!-- /.menu-title -->

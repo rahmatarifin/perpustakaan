@@ -12,7 +12,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Petugas</a></li>
+                            <li><a href="#">anggota</a></li>
                             <li class="active">Update</li>
                         </ol>
                     </div>
@@ -28,13 +28,13 @@
                   <div class="col-lg-6">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Update</strong> Data Petugas
+                        <strong>Update</strong> Data Anggota
                       </div>
                       
                       <div class="card-body card-block">
                       <?php foreach ($data as $anggota) { ?>
                   
-                      	<form action="<?php echo base_url(); ?>update/" method="post">
+                      	<form action="<?php echo base_url(); ?>anggota/update/" method="post">
 
                         
 
@@ -50,11 +50,24 @@
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Nama</label>
+                              <label for="text-input" class=" form-control-label">Nama Anggota</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="nama" value="<?php echo $anggota->nama; ?>" class="form-control">
-                              <small class="form-text text-muted">Nama</small>
+                              <input type="text" id="text-input" name="nama_anggota" value="<?php echo $anggota->nama_anggota; ?>" class="form-control">
+                              <small class="form-text text-muted">Nama anggota</small>
+                            </div>
+                          </div>
+
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Jenis Kelamin</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <select name="jk">
+                                  <option value="<?php echo $anggota->jk; ?>"><?php echo $anggota->jk; ?></option>
+                                  <option value="Laki-laki"> Laki-laki </option>
+                                  <option value="Perempuan"> Perempuan </option>
+                                </select>
                             </div>
                           </div>
 

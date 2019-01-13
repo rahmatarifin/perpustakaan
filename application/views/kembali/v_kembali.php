@@ -12,7 +12,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li class="active">Anggota</li>
+                            <li class="active">Pengembalian</li>
                         </ol>
                     </div>
                 </div>
@@ -27,26 +27,44 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
+                            <a href="<?php echo base_url(); ?>pengembalian/add_kembali">Tambah</a>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
                       <tr>
+                        <th>Kode Peminjaman</th>
+                        <th>Tanggal Pinjam</th>
+                        <th>Tanggal Kembali</th>
                         <th>NIS</th>
-                        <th>Nama</th>
+                        <th>Kode Buku</th>
+                        <th>Nama Anggota</th>
+                        <th>Jenis Kelamin</th>
                         <th>Alamat</th>
-                        <th colspan="2">Aksi</th>
+                        <th>Judul</th>
+                        <th>Pengarang</th>
+                        <th>Deskripsi</th>
+                        <th>Denda</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                      <?php foreach($data as $anggota): ?>
-                        <td><?php echo $anggota->nis; ?></td>
-                        <td><?php echo $anggota->nama; ?></td>
-                        <td><?php echo $anggota->alamat; ?></td>
-                        <td><a href="<?php base_url();?>anggota/edit/<?php echo $anggota->nis; ?>">Edit</a></td>
-                        <td><a href="<?php base_url();?>anggota/hapus/<?php echo $anggota->nis;?>">Hapus</a></td>
+                      <?php foreach($join as $pinjam): ?>
+                        <td><?php echo $pinjam->id_transaksi;?></td>
+                        <td><?php echo $pinjam->tanggal_pinjam; ?></td>
+                        <td><?php echo $pinjam->tanggal_kembali; ?></td>
+                        <td><?php echo $pinjam->nis; ?></td>
+                        <td><?php echo $pinjam->kode_buku; ?></td>
+                        <td><?php echo $pinjam->nama_anggota; ?></td>
+                        <td><?php echo $pinjam->jk; ?></td>
+                        <td><?php echo $pinjam->alamat; ?></td>
+                        <td><?php echo $pinjam->judul; ?></td>
+                        <td><?php echo $pinjam->pengarang; ?></td>
+                        <td><?php echo $pinjam->description; ?></td>
+                        <td><?php echo $pinjam->denda; ?></td>
+                      </tr>
                     <?php endforeach; ?>
+                     
                     </tbody>
                   </table>
                         </div>
