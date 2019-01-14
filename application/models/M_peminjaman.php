@@ -10,11 +10,13 @@ class M_peminjaman extends ci_model{
 	}
 
 	function per_id($id_tr){
-		$this->db->where('id_transaksi', $id_tr);
+		
 		$this->db->select('*');
 		$this->db->from('transaksi');
 		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
 		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
+		$this->db->where('id_transaksi', $id_tr);
+		
 		$query = $this->db->get();
 		return $query->result();
 
@@ -47,7 +49,7 @@ class M_peminjaman extends ci_model{
 		return $pinjam;
 	}
 
-	function kembali($id_tr, $data){
+	function update($id_tr, $data){
 		$id_tr = $this->db->where('id_transaksi', $id_tr);
 		$kembali = $this->db->update('transaksi', $data);
 		return $kembali;

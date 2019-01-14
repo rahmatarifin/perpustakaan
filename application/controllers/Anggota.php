@@ -2,23 +2,30 @@
 class Anggota extends ci_controller{
 	function __construct(){
 		parent::__construct();
-
 		$this->load->model('m_anggota');
+		$this->load->model('m_login');
+
+		if($this->session->userdata('username') == ""){
+			redirect(base_url('login'));
+		}
 	}
 
 	function index(){
+		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
-		$this->load->view('templates/leftpan');
-		$this->load->view('templates/r_header');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
+		
 		$data['data'] = $this->m_anggota->tampildata();
 		$this->load->view('anggota/anggota', $data);
 		$this->load->view('templates/v_footer');
 	}
 
 	function tambahanggota(){
+		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
-		$this->load->view('templates/leftpan');
-		$this->load->view('templates/r_header');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
 		$this->load->view('anggota/tambah');
 		$this->load->view('templates/v_footer');
 	}
@@ -36,9 +43,10 @@ class Anggota extends ci_controller{
 	}
 
 	function edit(){
+		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
-		$this->load->view('templates/leftpan');
-		$this->load->view('templates/r_header');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
 		$nis = $this->uri->segment(3);
 		$data['data'] = $this->m_anggota->per_nis($nis);
 		$this->load->view('anggota/update', $data);

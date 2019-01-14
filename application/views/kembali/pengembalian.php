@@ -31,15 +31,25 @@
                         <strong>Tambah</strong> Pengembalian
                       </div>
                       <div class="card-body card-block">
-                      <form action="<?php echo base_url(); ?>peminjaman/pinjam/" method="post">
+                      <?php foreach ($join as $transaksi) { ?>
+                        
+              
+                      <form action="<?php echo base_url(); ?>peminjaman/update/" method="post">
 
                           <div class="row form-group">
                             <div class="col col-md-3">
                               <label for="text-input" class=" form-control-label">Tanggal Pinjam</label>
                             </div>
-                            <div class="col-12 col-md-9">
-                              <input type="text" name="tanggal_pinjam"  class="form-control" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y G:i:s'); ?>" >
+                            <div class="col-12 col-md-3">
+                              <input type="text" name="tanggal_pinjam"  class="form-control" value="<?php echo $transaksi->tanggal_pinjam; ?>" >
                               <small class="form-text text-muted">Tanggal Peminjaman Buku</small>
+                            </div>
+
+                            <div class="col-12 col-md-3">
+                              <input type="text"  class="form-control" value="<?php 
+                              $timezone = time()+ (60*60*7);
+                              echo gmdate('d-m-Y G:i:s', $timezone); ?>" >
+                              <small class="form-text text-muted">Tanggal Pengembalian Buku</small>
                             </div>
                           </div>
 
@@ -47,8 +57,8 @@
                             <div class="col col-md-3">
                               <label for="text-input" class=" form-control-label">Kode transaksi</label>
                             </div>
-                            <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="id_transaksi" class="form-control">
+                            <div class="col-12 col-md-6">
+                              <input type="text" id="text-input" name="id_transaksi" class="form-control" value="<?php echo $transaksi->id_transaksi; ?>">
                               <small class="form-text text-muted">Kode Transaksi</small>
                             </div>
                           </div>
@@ -59,8 +69,12 @@
                               <label for="text-input" class=" form-control-label">NIS</label>
                             </div>
                             <div class="col-12 col-md-3">
-                              <input type="text" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control">
+                              <input type="text" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control" value="<?php echo $transaksi->nis; ?>">
                               <small class="form-text text-muted">Nomor Induk Siswa</small>
+                            </div>
+                            <div class="col-12 col-md-3">
+                              <input type="text" id="text-input" class="form-control" value="<?php echo $transaksi->nama_anggota; ?>">
+                              <small class="form-text text-muted">Nama Anggota</small>
                             </div>
                           </div>
 
@@ -69,32 +83,34 @@
                               <label for="text-input" class=" form-control-label">Kode Buku</label>
                             </div>                        
                             <div class="col-12 col-md-3">
-                              <input type="text" id="text-input" name="kode_buku" placeholder="kode buku" class="form-control">
+                              <input type="text" id="text-input" name="kode_buku" placeholder="kode buku" class="form-control" value="<?php echo $transaksi->kode_buku; ?>">
                               <small class="form-text text-muted">Kode Buku</small>
-                            </div>                        
+                            </div>                      
+                            <div class="col-12 col-md-6">
+                              <input type="text" id="text-input" class="form-control" value="<?php echo $transaksi->judul; ?>">
+                              <small class="form-text text-muted">Judul Buku</small>
+                            </div>
                           </div>
+
                           
                           <div class="row form-group">
-                            <div class="col col-md-3">
-                              <label for="select" class=" form-control-label">Status</label>
+                            <div class="col-md-3">
+                              <label class="form-control-label">Status</label>
                             </div>
-                            <div class="col-12 col-md-9">
-                              <div class="form-check-inline form-check">
+                            <div class="col col-md-9">
+                              <div class="form-check-inline form-check-label">
                                 <label for="inline-radio1" class="form-check-label">
-                                  <input type="radio" id="inline-radio" name="status" value="pinjam" class="form-check-input">
-                                  pinjam
+                                  <input type="radio" id="inline-radio1" name="status" value="kembali">Kembali</input>
                                 </label>
                               </div>
                             </div>
                           </div>
 
-
-
                           <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">Submit </button>
                           </div>                        
                         </form>            
-                      
+                      <?php } ?>
                       </div>
                     </div>                   
                   </div>

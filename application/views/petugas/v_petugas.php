@@ -37,15 +37,18 @@
                         <th>Nama</th>
                         <th>Username</th>
                         <th>Password</th>
+                        <th>Level</th>
                         <th colspan="2">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                       <?php foreach($data as $petugas): ?>
-                        <td><?php echo $petugas->id_petugas; ?></td><td><?php echo $petugas->nama_petugas; ?></td>
+                        <td><?php echo $petugas->id_petugas; ?></td>
+                        <td><?php echo $petugas->nama_petugas; ?></td>
                         <td><?php echo $petugas->username; ?></td>
                         <td><?php echo $petugas->password; ?></td>
+                        <td><?php echo $petugas->level; ?></td>
                         <td><a href="<?php base_url();?>edit/<?php echo $petugas->id_petugas; ?>"><i class="fa fa-pencil-square-o"></i></a></td>
                         <td><a href="<?php base_url();?>petugas/hapus/<?php echo $petugas->id_petugas;?>"><i class="fa fa-eraser"></i></a></td>
                       </tr>

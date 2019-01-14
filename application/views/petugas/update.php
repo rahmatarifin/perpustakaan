@@ -34,7 +34,7 @@
                       <div class="card-body card-block">
                       <?php foreach ($data as $petugas) { ?>
                   
-                      	<form action="<?php echo base_url(); ?>update/" method="post">
+                      	<form action="<?php echo base_url(); ?>petugas/update/" method="post">
 
                         
 
@@ -43,8 +43,8 @@
                               <label for="text-input" class=" form-control-label">Kode petugas</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="hidden" id="text-input" name="kode_petugas" value="<?php echo $petugas->id_petugas; ?>" class="form-control">
-                              <small class="form-text text-muted">Nama</small>
+                              <input type="text" id="text-input" name="kode_petugas" value="<?php echo $petugas->id_petugas; ?>" class="form-control">
+                              <small class="form-text text-muted">Kode Petugas</small>
                             </div>
                           </div>
 
@@ -53,8 +53,8 @@
                               <label for="text-input" class=" form-control-label">Nama</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="nama" value="<?php echo $petugas->nama; ?>" class="form-control">
-                              <small class="form-text text-muted">Nama</small>
+                              <input type="text" id="text-input" name="nama" value="<?php echo $petugas->nama_petugas; ?>" class="form-control">
+                              <small class="form-text text-muted">Nama Petugas</small>
                             </div>
                           </div>
 

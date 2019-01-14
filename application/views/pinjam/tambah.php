@@ -64,9 +64,8 @@
                               <input type="searc" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control">
                               <small class="form-text text-muted">Nomor Induk Siswa</small>
                             </div>
-            
                             <div class="col-12 col-md-6">
-                              <input type="text" id="text-input" name="nama" placeholder="Nomor Induk Siswa" class="form-control">
+                              <input type="text" id="text-input" value="<?php echo $anggota->nama_anggota; ?>" class="form-control">
                               <small class="form-text text-muted">Nama Anggota/Siswa</small>
                             </div>
                           </div>

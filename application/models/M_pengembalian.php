@@ -9,10 +9,16 @@ class M_pengembalian extends ci_model{
 		}
 	}
 
-	function per_kode($id_tr){
+	function per_id($id_tr){
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
+		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
 		$this->db->where('id_transaksi', $id_tr);
-		$query = $this->db->get('transaksi');
+		
+		$query = $this->db->get();
 		return $query->result();
+
 	}
 
 	/*function denda($id_tr, $x){

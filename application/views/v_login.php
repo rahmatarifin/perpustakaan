@@ -48,15 +48,7 @@
                             <label>Password</label>
                             <input type="password" class="form-control" placeholder="Password" name="password">
                         </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember Me
-                            </label>
-                            <label class="pull-right">
-                                <a href="#">Forgotten Password?</a>
-                            </label>
-
-                        </div>
+                        
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
                         
                     </form>

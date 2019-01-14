@@ -4,12 +4,18 @@ class Buku_ extends ci_controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_buku_');
+		$this->load->model('m_login');
+
+		if($this->session->userdata('username') == ""){
+			redirect(base_url('login'));
+		}
 	}
 
 	function index(){
+		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
-		$this->load->view('templates/leftpan');
-		$this->load->view('templates/r_header');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
 		$data['join']=$this->m_buku_->tampildata();
 		$this->load->view('buku/buku', $data);
 		$this->load->view('templates/v_footer');
@@ -17,7 +23,7 @@ class Buku_ extends ci_controller{
 
 	function tambahbuku(){
 		$this->load->view('templates/v_head');
-		$this->load->view('templates/leftpan');
+		$this->load->view('templates/leftpan_petugas');
 		$this->load->view('templates/r_header');
 		$kode_k = $this->uri->segment(3);
 		$data['dd_kategori'] = $this->m_buku_->getdd();
@@ -42,7 +48,7 @@ class Buku_ extends ci_controller{
 
 	function edit(){
 		$this->load->view('templates/v_head');
-		$this->load->view('templates/leftpan');
+		$this->load->view('templates/leftpan_petugas');
 		$this->load->view('templates/r_header');
 		$kode_ = $this->uri->segment(3);
 		$data['dd_kategori'] = $this->m_buku_->getdd();

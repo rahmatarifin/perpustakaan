@@ -7,8 +7,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="<?php base_url(); ?>"><h4><strong>SIS</strong>PER</h4></a>
+                <a class="navbar-brand hidden" href="./dashboard"><strong>S</strong>PER</a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -23,15 +23,16 @@
                     <li>
                         <a href="<?php echo base_url(); ?>buku_"> <i class="menu-icon fa fa-book"></i>Buku</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>kategori"><i class="menu-icon fa fa-book"></i>Kategori</a>
+                    </li>
 
                     <h3 class="menu-title">Transaksi</h3><!-- /.menu-title -->
 
                     <li>
-                        <a href="<?php base_url(); ?>peminjaman"> <i class="menu-icon fa fa-tasks"></i>Peminjaman</a>
+                        <a href="<?php echo base_url(); ?>peminjaman"> <i class="menu-icon fa fa-tasks"></i>Transaksi</a>
                     </li>
-                    <li>
-                        <a href="<?php base_url(); ?>pengembalian"> <i class="menu-icon ti-email"></i>Pengembalian</a>
-                    </li>
+                    
                     
                     <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
