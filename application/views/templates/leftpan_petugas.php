@@ -39,10 +39,10 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Laporan</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li>
-                                <i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Peminjaman</a>
+                                <i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url(); ?>peminjaman/printlaporan/" target="blank">Peminjaman</a>
                             </li>
                             <li>
-                                <i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Pengembalian</a>
+                                <i class="menu-icon fa fa-sign-in"></i><a href="<?php echo base_url(); ?>buku_/printlaporan">Buku</a>
                             </li>
                         </ul>
                     </li>

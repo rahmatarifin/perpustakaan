@@ -28,9 +28,9 @@
                             
                         </div>
                         <div class="card-body">
-                          <div class="login-form">
-                          <img  width="40%" height="40%" src="<?php echo base_url(); ?>assets/images/logo.gif">
-                          <p> SELAMAT DATANG DI SISTEM ADMINISTRASI PERPUSTAKAAN BERBASIS WEB, <?php echo $username; ?>.
+                          <div class="login-form" align="center">
+                          <img width="20%" height="20%" src="<?php echo base_url(); ?>assets/images/logo.gif">
+                          <p> SELAMAT DATANG DI SISTEM ADMINISTRASI PERPUSTAKAAN BERBASIS WEB, <strong><?php echo $username; ?></strong>.
                           </p>                            
                           </div>
                           

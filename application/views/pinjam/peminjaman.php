@@ -11,7 +11,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="<?php echo base_url();?>dasboad/">Dashboard</a></li>
                             <li class="active">Peminjaman</li>
                         </ol>
                     </div>
@@ -60,7 +60,21 @@
                         
                         <td><?php echo $pinjam->judul; ?></td>
                         <td><?php echo $pinjam->pengarang; ?></td>
-                        <td><?php echo $pinjam->denda; ?></td>
+                        <td><?php 
+
+                            $tanggal_pinjam = new datetime($pinjam->tanggal_pinjam);
+                            $tanggal_kembali = new datetime($pinjam->tanggal_kembali);
+
+                            $selisih = $tanggal_kembali->diff($tanggal_pinjam)->format('%a');
+
+                            if($selisih-7<=0){
+                                $denda = 0;
+                            }else{
+                                $denda = ($selisih-7)*1000;
+                             
+                            }
+                            echo $denda;?></td>
+                            
                         <td><?php echo $pinjam->status ?></td>
                         <td>
                             <a href="<?php base_url();?>peminjaman/pengembalian/<?php echo $pinjam->id_transaksi; ?>">

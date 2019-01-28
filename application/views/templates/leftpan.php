@@ -21,11 +21,11 @@
                     </li>
 
                     <li>
-                        <a href="<?php echo base_url(); ?>adm/petugas/"> <i class="menu-icon fa fa-user"></i>Petugas</a>
+                        <a href="<?php echo base_url(); ?>petugas/"> <i class="menu-icon fa fa-user"></i>Petugas</a>
                     </li>
                     
                     <li>
-                        <a href="<?php echo base_url(); ?>buku_"> <i class="menu-icon fa fa-book"></i>Buku</a>
+                        <a href="<?php echo base_url(); ?>adm/buku"> <i class="menu-icon fa fa-book"></i>Buku</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url(); ?>adm/kategori"> <i class="menu-icon fa fa-book"></i>Kategori</a>
@@ -34,14 +34,14 @@
                     <h3 class="menu-title">Transaksi</h3><!-- /.menu-title -->
 
                     <li>
-                        <a href="<?php echo base_url(); ?>adm/peminjaman/"> <i class="menu-icon fa fa-tasks"></i>Transaksi</a>
+                        <a href="<?php echo base_url(); ?>adm/pinjam/"> <i class="menu-icon fa fa-tasks"></i>Transaksi</a>
                     </li>                    
                     <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file"></i>Laporan</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li>
-                                <i class="menu-icon fa fa-file"></i><a href="page-login.html">Peminjaman</a>
+                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>laporanpdf">Peminjaman</a>
                             </li>
                             <li>
                                 <i class="menu-icon fa fa-file"></i><a href="page-register.html">Pengembalian</a>

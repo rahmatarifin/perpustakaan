@@ -47,8 +47,7 @@
                         <td><?php echo $anggota->nama_anggota; ?></td>
                         <td><?php echo $anggota->jk; ?></td>
                         <td><?php echo $anggota->alamat; ?></td>
-                        <td><a href="<?php base_url();?>anggota/edit/<?php echo $anggota->nis; ?>"><i class="fa fa-pencil-square-o"></a></i></td>
-                        <td><a href="<?php base_url();?>hapus/<?php echo $anggota->nis;?>"><i class="fa fa-eraser"></i></a></td>
+                        <td><a href="<?php echo base_url();?>anggota/edit/<?php echo $anggota->nis; ?>"><i class="fa fa-pencil-square-o"></a></i>&nbsp;&nbsp;<a href="<?php echo base_url();?>hapus/<?php echo $anggota->nis;?>"><i class="fa fa-eraser"></i></a></td>
                       </tr>
                     <?php endforeach; ?>
                       

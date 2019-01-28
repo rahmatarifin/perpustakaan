@@ -38,7 +38,7 @@
                         <th align="center">Pengarang</th>
                         <th align="center">Deskripsi</th>
                         <th align="center">Kategori</th>
-                        <th align="center">Jumlah</th>
+                        
                         <th colspan="2" align="center">Aksi</th>
                       </tr>
                     </thead>
@@ -50,12 +50,12 @@
                         <td><?php echo $buku->pengarang; ?></td>
                         <td><?php echo $buku->description; ?></td>
                         <td><?php echo $buku->kategori; ?></td>
-                        <td><?php echo $buku->jumlah; ?></td>
+                        
                         <td>
-                            <a href="<?php base_url();?>buku_/edit/<?php echo $buku->kode_buku; ?>"><i class="fa fa-pencil-square-o"></i></a>
+                            <a href="<?php echo base_url();?>buku_/edit/<?php echo $buku->kode_buku; ?>"><i class="fa fa-pencil-square-o"></i></a>
                         </td>
                         <td align="center">
-                            <a href="<?php base_url();?>buku_/hapus/<?php echo $buku->kode_buku;?>"><i class="fa fa-eraser"></i></a>
+                            <a href="<?php echo base_url();?>buku_/hapus/<?php echo $buku->kode_buku;?>"><i class="fa fa-eraser"></i></a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

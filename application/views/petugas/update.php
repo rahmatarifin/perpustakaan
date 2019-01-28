@@ -78,6 +78,18 @@
                             </div>
                           </div>
 
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Level</label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="level" id="select" class="form-control">
+                                <option value="<?php echo $petugas->level; ?>"><?php echo $petugas->level; ?></option>
+                                <option value="admin">admin</option>
+                                <option value="petugas">petugas</option>
+                              </select>
+                              <small class="form-text text-muted">Status Petugas</small>
+                            </div>
+                          </div>
+
                           <div class="card-footer">
                           	<button type="submit" class="btn btn-primary btn-sm">Submit </button>
                           </div>                        

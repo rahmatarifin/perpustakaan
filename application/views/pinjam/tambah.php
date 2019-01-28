@@ -39,8 +39,8 @@
                             <div class="col col-md-3">
                               <label for="text-input" class=" form-control-label">Tanggal Pinjam</label>
                             </div>
-                            <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="id_transaksi" class="form-control" >
+                            <div class="col-12 col-md-3">
+                              <input type="text" id="text-input" name="id_transaksi" class="form-control" value="<?php echo date('Y-m-d G:i:s'); ?>" >
                               <small class="form-text text-muted">Tanggal Peminjaman Buku</small>
                             </div>
                           </div>
@@ -49,7 +49,7 @@
                             <div class="col col-md-3">
                             	<label for="text-input" class=" form-control-label">Kode transaksi</label>
                             </div>
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-3">
                             	<input type="text" id="text-input" name="id_transaksi" class="form-control">
                             	<small class="form-text text-muted">Kode Transaksi</small>
                             </div>
@@ -64,10 +64,8 @@
                               <input type="searc" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control">
                               <small class="form-text text-muted">Nomor Induk Siswa</small>
                             </div>
-                            <div class="col-12 col-md-6">
-                              <input type="text" id="text-input" value="<?php echo $anggota->nama_anggota; ?>" class="form-control">
-                              <small class="form-text text-muted">Nama Anggota/Siswa</small>
-                            </div>
+                            
+                            
                           </div>
 
                           <div class="row form-group">
@@ -79,9 +77,19 @@
                             	<small class="form-text text-muted">Kode Buku</small>
                             </div>
                           
-                            <div class="col-12 col-md-6">
-                            	<input type="text" id="text-input" name="judul" class="form-control">
-                            	<small class="form-text text-muted">Judul Buku</small>
+                            
+                          </div>
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="select" class=" form-control-label">Status</label>
+                            </div>
+                            <div class="col-12 col-md-3">
+                              <select name="status" id="select" class="form-control">
+                                <option value="#">Please select</option>
+                                <option value="pinjam">pinjam</option>
+                                <option value="kembali">kembali</option>
+                              </select>
+                              <small class="form-text text-muted">Status Transaksi</small>
                             </div>
                           </div>
 

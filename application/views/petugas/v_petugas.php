@@ -49,8 +49,8 @@
                         <td><?php echo $petugas->username; ?></td>
                         <td><?php echo $petugas->password; ?></td>
                         <td><?php echo $petugas->level; ?></td>
-                        <td><a href="<?php base_url();?>edit/<?php echo $petugas->id_petugas; ?>"><i class="fa fa-pencil-square-o"></i></a></td>
-                        <td><a href="<?php base_url();?>petugas/hapus/<?php echo $petugas->id_petugas;?>"><i class="fa fa-eraser"></i></a></td>
+                        <td><a href="<?php echo base_url();?>petugas/edit/<?php echo $petugas->id_petugas; ?>"><i class="fa fa-pencil-square-o"></i></a></td>
+                        <td><a href="<?php echo base_url();?>petugas/hapus/<?php echo $petugas->id_petugas;?>"><i class="fa fa-eraser"></i></a></td>
                       </tr>
                     <?php endforeach; ?>
                       

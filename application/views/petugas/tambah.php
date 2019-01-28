@@ -40,8 +40,8 @@
                             	<label for="text-input" class=" form-control-label">Kode Petugas</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="id_petugas" placeholder="Kode Petugas" class="form-control">
-                            	<small class="form-text text-muted">Kode Petugas</small>
+                            	<input type="text" id="text-input" name="id_petugas" placeholder="Kode Petugas/NIP" class="form-control">
+                            	<small class="form-text text-muted">Kode Petugas/*nomor identitas</small>
                             </div>
                           </div>
 
@@ -73,6 +73,20 @@
                             <div class="col-12 col-md-9">
                             	<input type="text" id="text-input" name="password" placeholder="Password" class="form-control">
                             	<small class="form-text text-muted">Password</small>
+                            </div>
+                          </div>
+
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="select" class=" form-control-label">Select</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                              <select name="level" id="select" class="form-control">
+                                <option value="#">Please select</option>
+                                <option value="admin">admin</option>
+                                <option value="petugas">petugas</option>
+                              </select>
+                              <small class="form-text text-muted">Status Petugas</small>
                             </div>
                           </div>
 

@@ -48,7 +48,7 @@
                             <div class="col-12 col-md-3">
                               <input type="text"  class="form-control" value="<?php 
                               $timezone = time()+ (60*60*7);
-                              echo gmdate('d-m-Y G:i:s', $timezone); ?>" >
+                              echo gmdate('Y-m-d G:i:s', $timezone); ?>" >
                               <small class="form-text text-muted">Tanggal Pengembalian Buku</small>
                             </div>
                           </div>
@@ -72,7 +72,7 @@
                               <input type="text" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control" value="<?php echo $transaksi->nis; ?>">
                               <small class="form-text text-muted">Nomor Induk Siswa</small>
                             </div>
-                            <div class="col-12 col-md-3">
+                            <div class="col-12 col-md-6">
                               <input type="text" id="text-input" class="form-control" value="<?php echo $transaksi->nama_anggota; ?>">
                               <small class="form-text text-muted">Nama Anggota</small>
                             </div>
@@ -92,6 +92,29 @@
                             </div>
                           </div>
 
+                           <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Denda</label>
+                            </div>
+                            <?php
+
+                            $tanggal_pinjam = new datetime($transaksi->tanggal_pinjam);
+                                $tanggal_kembali = new datetime();
+                                $selisih = $tanggal_kembali->diff($tanggal_pinjam)->format('%a');
+                                
+                                if($selisih-7<=0){
+                                  $denda = 0;
+                                }else{
+                                 $denda = ($selisih-7)*1000;
+                                }
+
+                             ?>
+
+                            <div class="col-12 col-md-6">
+                              <input type="text" id="text-input" name="denda" class="form-control" value="<?php echo $denda; ?>">
+                              <small class="form-text text-muted">denda</small>
+                            </div>
+                          </div>
                           
                           <div class="row form-group">
                             <div class="col-md-3">
