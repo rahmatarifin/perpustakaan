@@ -28,6 +28,7 @@ class Peminjaman extends ci_controller{
 		$this->load->view('templates/r_header', $data);
 		$kode_ = $this->uri->segment(3);
 		$data['kode_buku'] = $this->m_peminjaman->cari_buku($kode_);
+		$data['kode_transaksi'] = $this->m_peminjaman->get_kode();
 		$this->load->view('pinjam/tambah', $data);
 		$this->load->view('templates/v_footer');
 	}
@@ -96,6 +97,8 @@ class Peminjaman extends ci_controller{
 
 
 	function printlaporan(){
+		
+		
 		$data['join'] = $this->m_peminjaman->tampiljoin();
 		$this->load->view('laporan/l_transaksi', $data);
 	}

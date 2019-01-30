@@ -9,6 +9,11 @@ class M_peminjaman extends ci_model{
 		}
 	}
 
+	function get_kode(){
+		$q = $this->db->select('max((RIGHT(id_transaksi, 4)) as kd_max)');
+
+	}
+
 	function per_id($id_tr){
 		
 		$this->db->select('*');
@@ -36,6 +41,7 @@ class M_peminjaman extends ci_model{
 		}
 	}
 
+
 	function denda(){
 		$this->db->select('*');
 		$this->db->from('transaksi');
@@ -62,42 +68,18 @@ class M_peminjaman extends ci_model{
 		return $kembali;
 	}
 
-	function view_by_date($date){
+	function tampilby_tgl($tgl_awal, $tgl_akhir){
 		$this->db->select('*');
 		$this->db->from('transaksi');
 		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
 		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
-		$this->db->where('DATE(tanggal_pinjam)', $date);
-		return $this->db->get()->result();
-	}
-
-	function view_by_month($month, $year){
-		$this->db->select('*');
-		$this->db->from('transaksi');
-		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
-		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
-		$this->db->where('MONTH(tanggal_pinjam)', $month);
-		$this->db->where('YEAR(tanggal_pinjam)', $year);
-
-		return $this->db->get()->result();
-	}
-
-	function view_by_year($year){
-		$this->db->select('*');
-		$this->db->from('transaksi');
-		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
-		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
-		$this->db->where('YEAR(tanggal_pinjam)', $year);
-
-		return $this->db->get()->result();
-	}
-
-	function option_tahun(){
-		$this->db->select('YEAR(tanggal_pinjam) AS tahun');
-		$this->db->from('transaksi');
-		$this->db->order_by('YEAR(tanggal_pinjam)');
-		$this->db->group_by('YEAR(tanggal_pinjam)');
-
-		return $this->db->get()->result();
+		$this->db->where('tanggal_pinjam >=', $tgl_awal);
+		$this->db->where('tanggal_pinjam <=', $tgl_akhir);
+		$query = $this->db->get();
+		if($query->num_rows()>0){
+			return $query->result();
+		}else{
+			return array();
+		}
 	}
 }

@@ -33,14 +33,14 @@
                       
                       <div class="card-body card-block">
 
-                      	<form action="<?php echo base_url(); ?>lappdf/" method="post">
+                      	<form action="<?php echo base_url(); ?>lapporan23/la_transaksi/" method="post" target="_blank">
 
                           <div class="row form-group">
                             <div class="col col-md-3">
                             	<label for="text-input" class=" form-control-label">Tanggal Awal</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="date" id="text-input" name="tgl_awal" placeholder="Kode Petugas/NIP" class="form-control">
+                            	<input type="date" id="text-input" name="tgl_awal" class="form-control">
                             	<small class="form-text text-muted">Tanggal Awal</small>
                             </div>
                           </div>
@@ -51,7 +51,7 @@
                               <label for="text-input" class=" form-control-label">Tanggal Akhir</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="date" id="text-input" name="tgl_akhir" placeholder="Nama Petugas" class="form-control">
+                              <input type="date" id="text-input" name="tgl_akhir" class="form-control">
                               <small class="form-text text-muted">Tanggal Akhir</small>
                             </div>
                           </div>

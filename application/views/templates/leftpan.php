@@ -41,10 +41,13 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file"></i>Laporan</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li>
-                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>laporanpdf">Peminjaman</a>
+                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>lapporan23">Peminjaman</a>
                             </li>
                             <li>
-                                <i class="menu-icon fa fa-file"></i><a href="page-register.html">Pengembalian</a>
+                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>lapporan23/la_anggota/" target="_blank">Anggota</a>
+                            </li>
+                            <li>
+                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>lapporan23/la_buku/" target="_blank">Buku</a>
                             </li>
                         </ul>
                     </li>

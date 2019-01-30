@@ -64,6 +64,7 @@ class Laporanpdf extends ci_controller{
 	function cetak(){
 		f(isset($_GET['filter']) && ! empty($_GET['filter'])){ 
             $filter = $_GET['filter'];
+            
             if($filter == '1'){ 
                 $tgl = $_GET['tanggal'];
                 

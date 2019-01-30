@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/themify-icons.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/cs-skin-elastic.css">
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-select.less">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/scss/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -34,8 +34,9 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="index.html">
-                        <img class="align-content" src="images/logo.png" alt="">
+                    <a href="<?php echo base_url(); ?>">
+                        <img class="align-content" width="100" height="100" src="<?php echo base_url(); ?>assets/images/logo.gif" ><br>
+                        SISPER SEKOLAH MENENGAH KEJURUAN NASIONAL BANTUL
                     </a>
                 </div>
                 <div class="login-form">

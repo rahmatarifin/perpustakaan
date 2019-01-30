@@ -6,8 +6,17 @@ Class Lappdf extends CI_Controller{
         $this->load->library('pdf');
         $this->load->model('m_peminjaman');
     }
-    
+
     function index(){
+        $data['username'] = $this->session->userdata('username');
+        $this->load->view('templates/v_head');
+        $this->load->view('templates/leftpan_petugas');
+        $this->load->view('templates/r_header', $data);
+        $this->load->view('laporan/filter');
+        $this->load->view('templates/v_footer');
+    }
+
+    function cetakpdf(){
         $pdf = new FPDF('L','mm','A4');
         // membuat halaman baru
         $pdf->AddPage();
@@ -28,32 +37,35 @@ Class Lappdf extends CI_Controller{
         $pdf->SetHeight(0.1);
         $pdf->Row(array("Tanggal Pinjam", "Tanggal Kembali", "NIS", "Kode Buku", "Nama Anggota", "Judul", "Status"));
   */
-        $pdf->Cell(40,6,'Tanggal Pinjam',1,0);
-        $pdf->Cell(40,6,'Tanggal Kembali',1,0);
-        $pdf->Cell(30,6,'NIS',1,0);
-        $pdf->Cell(30,6,'Kode Buku',1,0);
-        $pdf->Cell(40,6,'Nama Anggota',1,0);
-        $pdf->Cell(70,6,'Judul',1,0);
-        $pdf->Cell(30,6,'Status',1,1);
 
-        
 
+        echo "<table>";
+        echo "<thead>";
+        echo "<tr>";
+            echo "<td> Tanggal Pinjam </td>";
+            echo "<td> Tanggal Kembali </td>";
+            echo "<td> NIS </td>";
+            echo "<td> Nama Anggota </td>";
+            echo "<td> Kode Buku </td>";
+            echo "<td> Judul </td>";
+            echo "<td> Denda </td>";
+            echo "<td> Status </td>";
+        echo "</tr>";
         $pdf->SetFont('Arial','',10);
 
         $transaksi = $this->m_peminjaman->tampiljoin();
-
-
-
+        echo "</thead>";
+        echo "<tbody>"
+        
         foreach ($transaksi as $row){
-            $pdf->MultiCell(40,6,$row->tanggal_pinjam,1,'L',false);
-            $pdf->MultiCell(40,6,$row->tanggal_kembali,1,'L',false);
-            $pdf->MultiCell(30,6,$row->nis,1,'L',false);
-            $pdf->MultiCell(30,6,$row->kode_buku,1,'L',false);
-            $pdf->MultiCell(40,6,$row->nama_anggota,1,'L',false);
-            $pdf->MultiCell(70,6,$row->judul,1,'L',false);
-            $pdf->MultiCell(30,6,$row->status,1,'L',false);
+            echo "<tr>";
+                echo "<td>".$row->tanggal_pinjam."</td>";
+                echo "<td>".$row->tanggal_kembali."</td>";
+            echo "</tr>";
         }
-       
+        echo "</tbody>";
+        echo "</table>"; 
+
         $pdf->Output();
     }
 
