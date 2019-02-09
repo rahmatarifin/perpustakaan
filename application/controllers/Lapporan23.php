@@ -27,9 +27,14 @@ class Lapporan23 extends ci_controller{
 	function la_transaksi(){
 		$tgl_awal = $this->input->post('tgl_awal');
 		$tgl_akhir = $this->input->post('tgl_akhir');
-		$data['tgl_print'] = new datetime();
 		$data['join'] = $this->m_peminjaman->tampilby_tgl($tgl_awal, $tgl_akhir);
-		$this->load->view('laporan/la_transaksi', $data);
+		$this->load->view('laporan/La_transaksi', $data);
+	}
+
+	function by_nis(){
+		$nis = $this->input->post('nis');
+		$data['join'] = $this->m_peminjaman->by_nis($nis);
+		$this->load->view('laporan/transaksiby_nis', $data);
 	}
 
 

@@ -1,17 +1,33 @@
 <?php
 
+$tanggal_sekarang = date('d-m-y');
+
+class La_transaksi extends TCPDF{
+
+    function header(){
+        $image_file="<img src='<?php echo base_url(); ?>assets/images/logo.gif/' width='50' height='50'>";
+        $this->SetY(10);
+        $isi_header = 
+        "<table align=\"right\">
+            <tr>
+                <td>".$image_file."</td>
+            </tr>
+        </table>";
+        $this->writeHTML($isi_header, true, false, false, false,'');
+    }
+}
     //$date = new date();
     $pdf = new Pdf('p', 'mm', 'A4', true, 'utf-8', false);
 	$pdf->SetTitle('Daftar Transaksi');
 	$pdf->SetHeaderMargin(30);
     $pdf->SetTopMargin(20);
-            $pdf->setFooterMargin(20);
-            $pdf->SetAutoPageBreak(true);
-            $pdf->SetAuthor('.$username.');
-            $pdf->SetDisplayMode('real', 'default');
-            $pdf->AddPage();
-            //$html='<h8>'..'</h8>';
-            $html='
+    $pdf->setFooterMargin(20);
+    $pdf->SetAutoPageBreak(true);
+    $pdf->SetAuthor('.$username.');
+    $pdf->SetDisplayMode('real', 'default');
+    $pdf->AddPage();
+    //$html='<h8>'..'</h8>';
+    $html='
 
             	<h3>Sekolah Menengah Kejuruan Nasional Bantul</h3>
             	<h3>Sistem administrasi Perpustakaan </h3>

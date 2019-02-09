@@ -42,8 +42,8 @@
                         			<tr>
                         			<?php foreach($data as $kategori): ?>
                         				<td><?php echo $kategori->kode_kategori; ?></td>
-                        				<td><?php echo $kategori->kategori; ?></td>
-                        				<td align="center"><a href="<?php echo base_url();?>kategori/edit/<?php echo $kategori->kode_kategori; ?>"><i class="fa fa-pencil-square-o"></i></a><a href="<?php echo base_url(); ?>kategori/hapus/<?php echo $kategori->kode_kategori; ?>"><i class="fa fa-eraser"></i></a></td>
+                        				<td><?php echo $kategori->jenis_kategori; ?></td>
+                        				<td align="center"><a href="<?php echo base_url();?>kategori/edit/<?php echo $kategori->kode_kategori; ?>"><i class="fa fa-pencil-square-o"></i></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url(); ?>kategori/hapus/<?php echo $kategori->kode_kategori; ?>"><i class="fa fa-eraser"></i></a></td>
                         			</tr>
                         			<?php endforeach; ?>
                         		</tbody>

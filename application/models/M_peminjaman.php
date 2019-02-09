@@ -10,7 +10,7 @@ class M_peminjaman extends ci_model{
 	}
 
 	function get_kode(){
-		$q = $this->db->select('max((RIGHT(id_transaksi, 4)) as kd_max)');
+		$q = $this->db->select('max((RIGHT(kode_transaksi, 4)) as kd_max)');
 
 	}
 
@@ -20,11 +20,21 @@ class M_peminjaman extends ci_model{
 		$this->db->from('transaksi');
 		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
 		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
-		$this->db->where('id_transaksi', $id_tr);
+		$this->db->where('kode_transaksi', $id_tr);
 		
 		$query = $this->db->get();
 		return $query->result();
 
+	}
+
+	function by_nis($nis){
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
+		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
+		$this->db->where('nis', $nis);
+		$query = $this->db->get();
+		return $query->result();
 	}
 
 	function tampiljoin(){
@@ -63,7 +73,7 @@ class M_peminjaman extends ci_model{
 	}
 
 	function update($id_tr, $data){
-		$id_tr = $this->db->where('id_transaksi', $id_tr);
+		$id_tr = $this->db->where('kode_transaksi', $id_tr);
 		$kembali = $this->db->update('transaksi', $data);
 		return $kembali;
 	}

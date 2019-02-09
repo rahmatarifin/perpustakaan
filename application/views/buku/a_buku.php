@@ -36,9 +36,10 @@
                         <th align="center">Kode Buku</th>
                         <th align="center">Judul</th>
                         <th align="center">Pengarang</th>
-                        <th align="center">Deskripsi</th>
+                        <th align="center" width="10">Tahun Terbit</th>
+                        <th align="center">Penerbit</th>
+                        <th align="center">ISBN</th>
                         <th align="center">Kategori</th>
-                        
                         <th colspan="2" align="center">Aksi</th>
                       </tr>
                     </thead>
@@ -48,14 +49,13 @@
                         <td><?php echo $buku->kode_buku;?></td>
                         <td><?php echo $buku->judul; ?></td>
                         <td><?php echo $buku->pengarang; ?></td>
-                        <td><?php echo $buku->description; ?></td>
-                        <td><?php echo $buku->kategori; ?></td>
+                        <td><?php echo $buku->tahun_terbit; ?></td>
+                        <td><?php echo $buku->penerbit; ?></td>
+                        <td><?php echo $buku->isbn; ?></td>
+                        <td><?php echo $buku->jenis_kategori; ?></td>
                         
                         <td>
-                            <a href="<?php echo base_url();?>adm/editbuku/<?php echo $buku->kode_buku; ?>"><i class="fa fa-pencil-square-o"></i></a>
-                        </td>
-                        <td align="center">
-                            <a href="<?php echo base_url();?>adm/hapusbuku/<?php echo $buku->kode_buku;?>"><i class="fa fa-eraser"></i></a>
+                            <a href="<?php echo base_url();?>adm/editbuku/<?php echo $buku->kode_buku; ?>"><i class="fa fa-pencil-square-o"></i></a>&nbsp; &nbsp;                            <a href="<?php echo base_url();?>adm/hapusbuku/<?php echo $buku->kode_buku;?>"><i class="fa fa-eraser"></i></a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

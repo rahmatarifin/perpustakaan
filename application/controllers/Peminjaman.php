@@ -36,7 +36,7 @@ class Peminjaman extends ci_controller{
 
 	function pinjam(){
 		$data = array(
-				'id_transaksi' => $this->input->post('id_transaksi'),
+				'kode_transaksi' => $this->input->post('kode_transaksi'),
 				'nis' => $this->input->post('nis'),
 				'kode_buku' => $this->input->post('kode_buku'),
 				'tanggal_pinjam' => date_format(date_create($this->input->post('tanggal_pinjam')), 'y-m-d h:i:s'),
@@ -82,7 +82,7 @@ class Peminjaman extends ci_controller{
 			$denda = ($selisih-7)*1000;
 		}
 
-		$id_tr = $this->input->post('id_transaksi');
+		$id_tr = $this->input->post('kode_transaksi');
 		$data = array(
 			'nis' => $this->input->post('nis'),
 			'kode_buku' => $this->input->post('kode_buku'),
@@ -101,5 +101,16 @@ class Peminjaman extends ci_controller{
 		
 		$data['join'] = $this->m_peminjaman->tampiljoin();
 		$this->load->view('laporan/l_transaksi', $data);
+	}
+
+	function detail_transaksi(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
+		$id_tr = $this->uri->segment(3);
+		$data['join'] = $this->m_peminjaman->per_id($id_tr);
+		$this->load->view('pinjam/detail_transaksi', $data);
+		$this->load->view('templates/v_footer');
 	}
 }

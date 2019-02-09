@@ -66,16 +66,37 @@
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Deskripsi</label>
+                              <label for="text-input" class=" form-control-label">Tahun Terbit</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="description" value="<?php echo $buku->description; ?>" class="form-control">
-                              <small class="form-text text-muted">Deskripsi buku</small>
+                              <input type="text" id="text-input" name="tahun_terbit" value="<?php echo $buku->tahun_terbit; ?>" class="form-control">
+                              <small class="form-text text-muted">Tahun Terbit</small>
                             </div>
                           </div>
 
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Select</label></div>
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Penerbit</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                              <input type="text" id="text-input" name="penerbit" value="<?php echo $buku->penerbit; ?>" class="form-control">
+                              <small class="form-text text-muted">Penerbit</small>
+                            </div>
+                          </div>
+
+
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">ISBN</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                              <input type="text" id="text-input" name="isbn" value="<?php echo $buku->isbn; ?>" class="form-control">
+                              <small class="form-text text-muted">ISBN</small>
+                            </div>
+                          </div>
+
+                         <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Jenis Kategori</label></div>
                             <div class="col-12 col-md-9">
                               <select name="kode_kategori" id="select" class="form-control">
                                 <?php foreach ($dd_kategori as $kategori) {
@@ -86,17 +107,7 @@
                             </div>
                           </div>
 
-                          <div class="row form-group">
-                            <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Jumlah</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="jumlah" value="<?php echo $buku->jumlah; ?>" class="form-control">
-                              <small class="form-text text-muted">Jumlah buku</small>
-                            </div>
-                          </div>
-
-
+                        
                           <div class="card-footer">
                           	<button type="submit" class="btn btn-primary btn-sm">Submit </button>
                           </div>  

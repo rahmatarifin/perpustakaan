@@ -35,15 +35,15 @@
                         			<tr>
                         				<td width="10">ID</td>
                         				<td>Kategori</td>
-                        				<td width="10" align="center" colspan="2" width="15%">aksi</td>
+                        				<td width="50" align="center" colspan="2">aksi</td>
                         			</tr>
                         		</thead>
                         		<tbody>
                         			<tr>
                         			<?php foreach($data as $kategori): ?>
                         				<td><?php echo $kategori->kode_kategori; ?></td>
-                        				<td><?php echo $kategori->kategori; ?></td>
-                        				<td align="center"><a href="<?php echo base_url();?>adm/editkategori/<?php echo $kategori->kode_kategori; ?>"><i class="fa fa-pencil-square-o"></i></a><a href="<?php echo base_url(); ?>adm/hapuskategori/<?php echo $kategori->kode_kategori; ?>"><i class="fa fa-eraser"></i></a></td>
+                        				<td><?php echo $kategori->jenis_kategori; ?></td>
+                        				<td align="center"><a href="<?php echo base_url();?>adm/editkategori/<?php echo $kategori->kode_kategori; ?>"><i class="fa fa-pencil-square-o"></i></a>&nbsp; &nbsp;<a href="<?php echo base_url(); ?>adm/hapuskategori/<?php echo $kategori->kode_kategori; ?>"><i class="fa fa-eraser"></i></a></td>
                         			</tr>
                         			<?php endforeach; ?>
                         		</tbody>

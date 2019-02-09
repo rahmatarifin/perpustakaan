@@ -32,6 +32,9 @@
                     <li>
                         <a href="<?php echo base_url(); ?>peminjaman"> <i class="menu-icon fa fa-tasks"></i>Transaksi</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>peminjaman/detail"><i class="menu-icon fa fa-tasks"></i>Detail</a>
+                    </li>
                     
                     
                     <h3 class="menu-title">Extras</h3><!-- /.menu-title -->

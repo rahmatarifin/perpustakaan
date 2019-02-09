@@ -22,7 +22,6 @@ class Adm extends ci_controller
 	function index(){
 		//$this->load->view('web_dinamis');
 		$data['username'] = $this->session->userdata('username');
-		
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header', $data);
@@ -36,7 +35,6 @@ class Adm extends ci_controller
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header', $data);
-		
 		$data['data'] = $this->m_anggota->tampildata();
 		$this->load->view('anggota/a_anggota', $data);
 		$this->load->view('templates/v_footer');
@@ -49,6 +47,20 @@ class Adm extends ci_controller
 		$this->load->view('templates/r_header', $data);
 		$this->load->view('anggota/tambah');
 		$this->load->view('templates/v_footer');
+	}
+
+	function anggota_tambah(){
+		$data = array(
+			'nis' => $this->input->post('nis'),
+			'nama_anggota' => $this->input->post('nama_anggota'),
+			'jk' => $this->input->post('jk'),
+			'alamat' => $this->input->post('alamat'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir')
+			);
+
+		$this->m_anggota->tambah($data);
+		redirect('adm/anggota');
 	}
 
 	function editanggota(){
@@ -68,6 +80,19 @@ class Adm extends ci_controller
 		redirect(base_url('adm/anggota'));
 	}
 
+	function update_anggota(){
+		$nis = $this->input->post('nis');
+
+		$data = array('nama_anggota' => $this->input->post('nama_anggota'),
+			'jk' => $this->input->post('jk'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir')
+		);
+
+		$this->m_anggota->update($data);
+		redirect('adm/anggota');
+	}
+
 	function buku(){
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
@@ -79,9 +104,10 @@ class Adm extends ci_controller
 	}
 
 	function tambahbuku(){
+		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
-		$this->load->view('templates/r_header');
+		$this->load->view('templates/r_header', $data);
 		$kode_k = $this->uri->segment(3);
 		$data['dd_kategori'] = $this->m_buku_->getdd();
 		$this->load->view('buku/tambah', $data);
@@ -89,9 +115,10 @@ class Adm extends ci_controller
 	}
 
 	function editbuku(){
+		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
-		$this->load->view('templates/r_header');
+		$this->load->view('templates/r_header', $data);
 		$kode_ = $this->uri->segment(3);
 		$data['dd_kategori'] = $this->m_buku_->getdd();
 		$data['data'] = $this->m_buku_->per_kode($kode_);
@@ -167,7 +194,18 @@ class Adm extends ci_controller
 		$this->load->view('kembali/pengembalian', $data);
 		$this->load->view('templates/v_footer');
 	}
-	
+
+	function detai_transaksi(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header', $data);
+		$id_tr = $this->uri->segment(3);
+		$data['join'] = $this->m_peminjaman->per_id($id_tr);
+		$this->load->view('pinjam/detai_transaksi', $data);
+		$this->load->view('templates/v_footer');
+
+	}
 
 	function logout(){
 		$this->session->unset_userdata('username');

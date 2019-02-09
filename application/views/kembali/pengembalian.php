@@ -37,15 +37,15 @@
                       <form action="<?php echo base_url(); ?>peminjaman/update/" method="post">
 
                           <div class="row form-group">
-                            <div class="col col-md-3">
+                            <div class="col col-sm-3">
                               <label for="text-input" class=" form-control-label">Tanggal Pinjam</label>
                             </div>
-                            <div class="col-12 col-md-3">
+                            <div class="col-12 col-sm-3">
                               <input type="text" name="tanggal_pinjam"  class="form-control" value="<?php echo $transaksi->tanggal_pinjam; ?>" >
                               <small class="form-text text-muted">Tanggal Peminjaman Buku</small>
                             </div>
 
-                            <div class="col-12 col-md-3">
+                            <div class="col-12 col-sm-3">
                               <input type="text"  class="form-control" value="<?php 
                               $timezone = time()+ (60*60*7);
                               echo gmdate('Y-m-d G:i:s', $timezone); ?>" >
@@ -54,21 +54,21 @@
                           </div>
 
                           <div class="row form-group">
-                            <div class="col col-md-3">
+                            <div class="col col-sm-3">
                               <label for="text-input" class=" form-control-label">Kode transaksi</label>
                             </div>
                             <div class="col-12 col-md-6">
-                              <input type="text" id="text-input" name="id_transaksi" class="form-control" value="<?php echo $transaksi->id_transaksi; ?>">
+                              <input type="text" id="text-input" name="kode_transaksi" class="form-control" value="<?php echo $transaksi->kode_transaksi; ?>">
                               <small class="form-text text-muted">Kode Transaksi</small>
                             </div>
                           </div>
 
 
                           <div class="row form-group">
-                            <div class="col col-md-3">
+                            <div class="col col-sm-3">
                               <label for="text-input" class=" form-control-label">NIS</label>
                             </div>
-                            <div class="col-12 col-md-3">
+                            <div class="col-12 col-sm-3">
                               <input type="text" id="text-input" name="nis" placeholder="Nomor Induk Siswa" class="form-control" value="<?php echo $transaksi->nis; ?>">
                               <small class="form-text text-muted">Nomor Induk Siswa</small>
                             </div>
@@ -79,10 +79,10 @@
                           </div>
 
                           <div class="row form-group">
-                            <div class="col col-md-3">
+                            <div class="col col-sm-3">
                               <label for="text-input" class=" form-control-label">Kode Buku</label>
                             </div>                        
-                            <div class="col-12 col-md-3">
+                            <div class="col-12 col-sm-3">
                               <input type="text" id="text-input" name="kode_buku" placeholder="kode buku" class="form-control" value="<?php echo $transaksi->kode_buku; ?>">
                               <small class="form-text text-muted">Kode Buku</small>
                             </div>                      
@@ -93,7 +93,7 @@
                           </div>
 
                            <div class="row form-group">
-                            <div class="col col-md-3">
+                            <div class="col col-sm-3">
                               <label for="text-input" class=" form-control-label">Denda</label>
                             </div>
                             <?php
@@ -117,7 +117,7 @@
                           </div>
                           
                           <div class="row form-group">
-                            <div class="col-md-3">
+                            <div class="col-sm-3">
                               <label class="form-control-label">Status</label>
                             </div>
                             <div class="col col-md-9">

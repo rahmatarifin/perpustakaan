@@ -37,6 +37,8 @@
                         <th>Nama Anggota</th>
                         <th>Jenis Kelamin</th>
                         <th>Alamat</th>
+                        <th>Tempat Lahir</th>
+                        <th>Tanggal Lahir</th>
                         <th colspan="2">Aksi</th>
                       </tr>
                     </thead>
@@ -47,6 +49,8 @@
                         <td><?php echo $anggota->nama_anggota; ?></td>
                         <td><?php echo $anggota->jk; ?></td>
                         <td><?php echo $anggota->alamat; ?></td>
+                        <td><?php echo $anggota->tempat_lahir; ?></td>
+                        <td><?php echo $anggota->tanggal_lahir; ?></td>
                         <td><a href="<?php echo base_url();?>adm/editanggota/<?php echo $anggota->nis; ?>"><i class="fa fa-pencil-square-o"></a></i>&nbsp; &nbsp; <a href="<?php echo base_url();?>adm/hapusanggota/<?php echo $anggota->nis;?>"><i class="fa fa-eraser"></i></a></td>
                       </tr>
                     <?php endforeach; ?>

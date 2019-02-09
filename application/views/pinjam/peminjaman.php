@@ -40,7 +40,7 @@
                         <th>Nama Anggota</th>
                         <th>Jenis Kelamin</th>
                         <th>Judul</th>
-                        <th>Pengarang</th>
+                        <!--<th>Pengarang</th>-->
                         <th>Denda</th>
                         <th>Status</th>
                         <th>Aksi</th>
@@ -59,27 +59,30 @@
                         <td><?php echo $pinjam->jk; ?></td>
                         
                         <td><?php echo $pinjam->judul; ?></td>
-                        <td><?php echo $pinjam->pengarang; ?></td>
+                        <!--<td><?php echo $pinjam->pengarang; ?></td>-->
                         <td><?php 
 
-                            $tanggal_pinjam = new datetime($pinjam->tanggal_pinjam);
-                            $tanggal_kembali = new datetime($pinjam->tanggal_kembali);
+                          //  $tanggal_pinjam = new datetime($pinjam->tanggal_pinjam);
+                          //  $tanggal_kembali = new datetime($pinjam->tanggal_kembali);
 
-                            $selisih = $tanggal_kembali->diff($tanggal_pinjam)->format('%a');
+                          //  $selisih = $tanggal_kembali->diff($tanggal_pinjam)->format('%a');
 
-                            if($selisih-7<=0){
-                                $denda = 0;
-                            }else{
-                                $denda = ($selisih-7)*1000;
+                            //if($selisih-7<=0){
+                              //  $denda = 0;
+                            //}else{
+                              //  $denda = ($selisih-7)*1000;
                              
-                            }
-                            echo $denda;?></td>
+                            ///}
+                           // echo $denda; 
+                        echo $pinjam->denda; ?></td>
                             
                         <td><?php echo $pinjam->status ?></td>
                         <td>
-                            <a href="<?php base_url();?>peminjaman/pengembalian/<?php echo $pinjam->id_transaksi; ?>">
-                                <i class="btn btn-primary">Kembali</i>
+                            <a href="<?php echo base_url();?>peminjaman/pengembalian/<?php echo $pinjam->kode_transaksi; ?>">
+                                <i class="btn-sm btn-primary">Kembali</i>
                             </a>
+                            &nbsp; &nbsp; &nbsp;
+                            <a href="<?php echo base_url(); ?>peminjaman/detail_transaksi"><i class="btn-sm btn-success">Detail</i></a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

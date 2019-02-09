@@ -40,9 +40,10 @@ class Buku_ extends ci_controller{
 			'kode_buku' => $this->input->post('kode_buku'),
 			'judul' => $this->input->post('judul'),
 			'pengarang' => $this->input->post('pengarang'),
-			'description' => $this->input->post('description'),
+			'tahun_terbit' => $this->input->post('tahun_terbit'),
+			'penerbit' => $this->input->post('penerbit'),
+			'isbn' => $this->input->post('isbn'),
 			'kode_kategori' => $this->input->post('kode_kategori'),
-			'jumlah'=> $this->input->post('jumlah')
 			);
 		$this->m_buku_->tambah($data);
 		redirect('buku_');
@@ -67,9 +68,10 @@ class Buku_ extends ci_controller{
 		$data = array(
 			'judul' => $this->input->post('judul'),
 			'pengarang' => $this->input->post('pengarang'),
-			'description'=> $this->input->post('description'),
-			'kode_kategori' => $this->input->post('kode_kategori'),
-			'jumlah'=> $this->input->post('jumlah')
+			'tahun_terbit' => $this->input->post('tahun_terbit'),
+			'penerbit' => $this->input->post('penerbit'),
+			'isbn' => $this->input->post('isbn'),
+			'kode_kategori' => $this->input->post('kode_kategori')
 			);
 		$this->m_buku_->update($kode_, $data);
 		redirect('buku_');	

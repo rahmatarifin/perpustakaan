@@ -40,7 +40,7 @@
                               <label for="text-input" class=" form-control-label">Tanggal Pinjam</label>
                             </div>
                             <div class="col-12 col-md-3">
-                              <input type="text" id="text-input" name="id_transaksi" class="form-control" value="<?php echo date('Y-m-d G:i:s'); ?>" >
+                              <input type="text" id="text-input" name="tanggal_pinjam" class="form-control" value="<?php echo date('Y-m-d G:i:s'); ?>" >
                               <small class="form-text text-muted">Tanggal Peminjaman Buku</small>
                             </div>
                           </div>
@@ -50,7 +50,7 @@
                             	<label for="text-input" class=" form-control-label">Kode transaksi</label>
                             </div>
                             <div class="col-12 col-md-3">
-                            	<input type="text" id="text-input" name="id_transaksi" class="form-control" value="<?php echo $kode_buku; ?>">
+                            	<input type="text" id="text-input" name="id_transaksi" class="form-control">
                             	<small class="form-text text-muted">Kode Transaksi</small>
                             </div>
                           </div>

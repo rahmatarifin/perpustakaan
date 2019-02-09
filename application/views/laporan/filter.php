@@ -25,7 +25,7 @@
 
 
                 <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-xs-6 col-sm-6">
                     <div class="card">
                       <div class="card-header">
                         <strong>Filter</strong> Laporan Transaksi
@@ -64,7 +64,38 @@
                       </div>
                     </div>                   
                   </div>
+                  <div class="col-xs-6 col-sm-6">
+                   <div class="card">
+                      <div class="card-header">
+                        <strong>Filter</strong> Laporan Transaksi
+                      </div>
+                      
+                      <div class="card-body card-block">
+
+                        <form action="<?php echo base_url(); ?>lapporan23/by_nis/" method="post" target="_blank">
+
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">NIS</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                              <input type="text" id="text-input" name="nis" class="form-control" placeholder="Nomor Induk Siswa">
+                              <small class="form-text text-muted">Nomor Induk Siswa</small>
+                            </div>
+                          </div>
+                          
+                          <div class="card-footer">
+                            <button type="submit" class="btn btn-primary btn-sm">Submit </button>
+                          </div>                        
+                        </form>            
+                      </div>
+                    </div>                   
+                  </div>
                 </div>
 
             </div><!-- .animated -->
         </div>
+
+                  <!--<div class="col-lg-6">-->
+               
+               

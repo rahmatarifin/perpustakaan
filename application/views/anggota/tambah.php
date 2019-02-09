@@ -25,7 +25,7 @@
 
 
                 <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
                         <strong>Tambah</strong> Anggota
@@ -61,6 +61,7 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <select name="jk">
+                                  <option value="#" align="center">----Pilih----</option>
                                   <option value="Laki-laki"> Laki-laki </option>
                                   <option value="Perempuan"> Perempuan </option>
                                 </select>
@@ -76,6 +77,21 @@
                             	<small class="form-text text-muted">Alamat Siswa</small>
                             </div>
                           </div>
+
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Tempat/Tanggal Lahir</label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                              <input type="text" id="text-input" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control">
+                              <small class="form-text text-muted">Tempat Lahir</small>
+                            </div>
+                            <div class="col-12 col-md-3">
+                              <input type="date" id="text-input" name="tanggal_lahir" placeholder="tanggal Lahir" class="form-control">
+                              <small class="form-text text-muted">Tanggal Lahir</small>
+                            </div>
+                          </div>
+
 
                           <div class="card-footer">
                           	<button type="submit" class="btn btn-primary btn-sm">Submit </button>
