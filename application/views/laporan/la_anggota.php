@@ -9,15 +9,17 @@
     $pdf->SetDisplayMode('real', 'default');
     $pdf->AddPage();
     $html='
-    	<h3 align="center">Sekolah Menengah Kejuruan Nasional Bantul</h3>
-           	<h4 align="center">Sistem Administrasi Perpustakaan </h3>
+    	<br>
+        <br>
            	<h4 align="center">Daftar Anggota</h3>
                 <table border="1">
                         <tr>
-                            <th>NIS</th>
-                            <th>Nama Anggota</th>
-                            <th>Alamat</th>
-                            <th>Jenis Kelamin</th>
+                            <th align="center">NIS</th>
+                            <th align="center">Nama Anggota</th>
+                            <th align="center">Alamat</th>
+                            <th align="center">Jenis Kelamin</th>
+                            <th align="center">Tempat Lahir</th>
+                            <th align="center">Tanggal Lahir</th>
 
                         </tr>';
             foreach ($join as $anggota) 
@@ -28,6 +30,8 @@
                             <td>'.$anggota->nama_anggota.'</td>
                             <td>'.$anggota->alamat.'</td>
                             <td>'.$anggota->jk.'</td>
+                            <td>'.$anggota->tempat_lahir.'</td>
+                            <td>'.$anggota->tanggal_lahir.'</td>
                         </tr>';
                 }
             $html.='</table>';

@@ -12,8 +12,8 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Laporan</a></li>
-                            <li class="active">filter</li>
+                            <li><a href="#">Petugas</a></li>
+                            <li class="active">Update</li>
                         </ol>
                     </div>
                 </div>
@@ -25,51 +25,39 @@
 
 
                 <div class="row">
-                  <div class="col-xs-6 col-sm-6">
+                  <div class="col-lg-6">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Filter</strong> Laporan Transaksi
+                        <strong>Update</strong> Data Kategori
                       </div>
                       
                       <div class="card-body card-block">
+                      <?php foreach ($data as $kategori) { ?>
+                  
+                      	<form action="<?php echo base_url(); ?>kategori/update/" method="post">
 
-                      	<form action="<?php echo base_url(); ?>lapporan23/la_transaksi/" method="post" target="_blank">
-
-                          <div class="row form-group">
-                            <div class="col col-md-3">
-                            	<label for="text-input" class=" form-control-label">Tanggal Awal</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                            	<input type="date" id="text-input" name="tgl_awal" class="form-control">
-                            	<small class="form-text text-muted">Tanggal Awal</small>
-                            </div>
-                          </div>
-
+                        
 
                           <div class="row form-group">
                             <div class="col col-md-3">
-                              <label for="text-input" class=" form-control-label">Tanggal Akhir</label>
+                              <label for="text-input" class=" form-control-label">Kategori</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="date" id="text-input" name="tgl_akhir" class="form-control">
-                              <small class="form-text text-muted">Tanggal Akhir</small>
+                              <input type="text" id="text-input" name="kategori" value="<?php echo $kategori->kategori; ?>" class="form-control">
+                              <small class="form-text text-muted">Kategori buku</small>
                             </div>
                           </div>
 
-                          
                           <div class="card-footer">
                           	<button type="submit" class="btn btn-primary btn-sm">Submit </button>
                           </div>                        
+
                         </form>            
+                      <?php } ?>
                       </div>
                     </div>                   
                   </div>
-                  
                 </div>
 
             </div><!-- .animated -->
         </div>
-
-                  <!--<div class="col-lg-6">-->
-               
-               

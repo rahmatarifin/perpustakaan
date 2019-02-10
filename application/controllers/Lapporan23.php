@@ -40,7 +40,7 @@ class Lapporan23 extends ci_controller{
 
 	function la_buku(){
 		$data['join'] = $this->m_buku_->tampildata();
-		$this->load->view('laporan/la_buku', $data);
+		$this->load->view('laporan/La_buku', $data);
 	}
 
 	function la_anggota(){

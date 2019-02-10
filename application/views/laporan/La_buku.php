@@ -10,15 +10,19 @@
             $pdf->AddPage();
             $html='
 
-            	<h3>Sekolah Menengah Kejuruan Nasional Bantul</h3>
-            	<h3>Sistem administrasi Perpustakaan </h3>
+            	<br>
+                <br>
             	<h3>Daftar Buku</h3>
                     <table border="1">
                         <tr>
                             <th>Kode Buku</th>
                             <th>Judul</th>
                             <th>Pengarang</th>
-                            <th>Deskripsi</th>
+                            <th>Kategori</th>
+                            <th>Tahun Terbit</th>
+                            <th>Penerbit</th>
+                            <th>ISBN</th>
+
                         </tr>';
             foreach ($join as $buku) 
                 {
@@ -27,7 +31,10 @@
                             <td>'.$buku->kode_buku.'</td>
                             <td>'.$buku->judul.'</td>
                             <td>'.$buku->pengarang.'</td>
-                            <td>'.$buku->description.'</td>
+                            <td>'.$buku->jenis_kategori.'</td>
+                            <td>'.$buku->tahun_terbit.'</td>
+                            <td>'.$buku->penerbit.'</td>
+                            <td>'.$buku->isbn.'</td>
                         </tr>';
                 }
             $html.='</table>';
