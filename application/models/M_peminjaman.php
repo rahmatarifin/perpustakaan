@@ -27,12 +27,13 @@ class M_peminjaman extends ci_model{
 
 	}
 
-	function by_nis($nis){
+	function per_nis($kode_buku){
 		$this->db->select('*');
 		$this->db->from('transaksi');
 		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
 		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
-		$this->db->where('nis', $nis);
+		//$this->db->where('nis', $nis);
+		$this->db->where('transaksi.kode_buku', $kode_buku);
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -45,6 +46,52 @@ class M_peminjaman extends ci_model{
 
 		$query = $this->db->get();
 		if($query->num_rows()>0){
+			return $query->result();
+		}else{
+			return array();
+		}
+	}
+
+		function bystatus($status){
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->join('buku', 'buku.kode_buku = transaksi.kode_buku');
+		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
+		$this->db->where('status', $status);
+		$query= $this->db->get();
+		if ($query->num_rows()>0) {
+			return $query->result();
+		}else{
+			return array();
+		}
+	}
+
+	function bystatuspinjam($tgl_awal, $tgl_akhir, $status){
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->join('buku', 'buku.kode_buku = transaksi.kode_buku');
+		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
+		$this->db->where('tanggal_pinjam >=', $tgl_awal);
+		$this->db->where('tanggal_pinjam <=', $tgl_akhir);
+		$this->db->where('status', $status);
+		$query= $this->db->get();
+		if ($query->num_rows()>0) {
+			return $query->result();
+		}else{
+			return array();
+		}
+	}
+
+	function bystatuskembali($tgl_awal, $tgl_akhir, $status){
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->join('buku', 'buku.kode_buku = transaksi.kode_buku');
+		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
+		$this->db->where('tanggal_kembali >=', $tgl_awal);
+		$this->db->where('tanggal_kembali <=', $tgl_akhir);
+		$this->db->where('status', $status);
+		$query= $this->db->get();
+		if ($query->num_rows()>0) {
 			return $query->result();
 		}else{
 			return array();

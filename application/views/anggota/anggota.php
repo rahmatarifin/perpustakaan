@@ -51,7 +51,7 @@
                         <td><?php echo $anggota->alamat; ?></td>
                         <td><?php echo $anggota->tempat_lahir; ?></td>
                         <td><?php echo $anggota->tanggal_lahir; ?></td>
-                        <td><a href="<?php echo base_url();?>anggota/edit/<?php echo $anggota->nis; ?>"><i class="fa fa-pencil-square-o"></a></i>&nbsp;&nbsp;<a href="<?php echo base_url();?>hapus/<?php echo $anggota->nis;?>"><i class="fa fa-eraser"></i></a></td>
+                        <td><a href="<?php echo base_url();?>anggota/edit/<?php echo $anggota->nis; ?>"><i class="fa fa-pencil-square-o"></a></i>&nbsp;&nbsp;<a href="<?php echo base_url();?>anggota/hapus/<?php echo $anggota->nis;?>"><i class="fa fa-eraser"></i></a></td>
                       </tr>
                     <?php endforeach; ?>
                       

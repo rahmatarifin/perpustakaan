@@ -12,8 +12,8 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Petugas</a></li>
-                            <li class="active">Tambah</li>
+                            <li><a href="#">Pinjam</a></li>
+                            <li class="active">cari_data</li>
                         </ol>
                     </div>
                 </div>

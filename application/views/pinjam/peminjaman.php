@@ -81,8 +81,6 @@
                             <a href="<?php echo base_url();?>peminjaman/pengembalian/<?php echo $pinjam->kode_transaksi; ?>">
                                 <i class="btn-sm btn-primary">Kembali</i>
                             </a>
-                            &nbsp; &nbsp; &nbsp;
-                            <a href="<?php echo base_url(); ?>peminjaman/detail_transaksi"><i class="btn-sm btn-success">Detail</i></a>
                         </td>
                       </tr>
                     <?php endforeach; ?>

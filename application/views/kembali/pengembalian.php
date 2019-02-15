@@ -91,9 +91,44 @@
                               <small class="form-text text-muted">Judul Buku</small>
                             </div>
                           </div>
+                          
+                           <div class="row form-group">
+                            <div class="col col-sm-3">
+                              <label for="text-input" class=" form-control-label">Pengarang</label>
+                            </div>                        
+                            <div class="col-12 col-sm-6">
+                              <input type="text" id="text-input" value="<?php echo $transaksi->pengarang; ?>" class="form-control">
+                              <small class="form-text text-muted">Pengarang</small>
+                            </div>                      
+                          </div>
 
                            <div class="row form-group">
                             <div class="col col-sm-3">
+                              <label for="text-input" class=" form-control-label">Penerbit</label>
+                            </div>                        
+                            <div class="col-12 col-sm-5">
+                              <input type="text" id="text-input" value="<?php echo $transaksi->penerbit; ?>" class="form-control">
+                              <small class="form-text text-muted">Penerbit</small>
+                            </div>                      
+                            <div class="col col-sm-2">
+                              <label for="text-input" class=" form-control-label">Tahun Terbit</label>
+                            </div>                        
+                            <div class="col-12 col-sm-2">
+                              <input type="text" id="text-input" value="<?php echo $transaksi->tahun_terbit; ?>" class="form-control">
+                              <small class="form-text text-muted">Tahun Terbit</small>
+                            </div>                      
+                          </div>
+
+                          <div class="row form-group">
+                            <div class="col col-sm-3">
+                              <label for="text-input" class=" form-control-label">ISBN</label>
+                            </div>                        
+                            <div class="col-12 col-sm-5">
+                              <input type="text" id="text-input" value="<?php echo $transaksi->isbn; ?>" class="form-control">
+                              <small class="form-text text-muted">ISBN</small>
+                            </div>                      
+                          
+                            <div class="col col-sm-2">
                               <label for="text-input" class=" form-control-label">Denda</label>
                             </div>
                             <?php
@@ -110,7 +145,7 @@
 
                              ?>
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-2">
                               <input type="text" id="text-input" name="denda" class="form-control" value="<?php echo $denda; ?>">
                               <small class="form-text text-muted">denda</small>
                             </div>

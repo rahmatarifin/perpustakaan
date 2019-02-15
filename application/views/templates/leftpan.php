@@ -36,12 +36,24 @@
                     <li>
                         <a href="<?php echo base_url(); ?>adm/pinjam/"> <i class="menu-icon fa fa-tasks"></i>Transaksi</a>
                     </li>                    
+                    <li>
+                        <a href="<?php echo base_url(); ?>adm/data_pinjam/"> <i class="menu-icon fa fa-tasks"></i>Peminjaman</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>adm/data_kembali/"> <i class="menu-icon fa fa-tasks"></i>Pengembalian</a>
+                    </li>
                     <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file"></i>Laporan</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li>
-                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>lapporan23">Peminjaman</a>
+                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>lapporan23">Transaksi</a>
+                            </li>
+                            <li>
+                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>lapporan23/filter_pinjam">Peminjaman</a>
+                            </li>
+                            <li>
+                                <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>lapporan23/filter_kembali">Pengembalian & Denda</a>
                             </li>
                             <li>
                                 <i class="menu-icon fa fa-file"></i><a href="<?php echo base_url(); ?>lapporan23/la_anggota/" target="_blank">Anggota</a>

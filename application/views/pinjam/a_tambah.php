@@ -12,7 +12,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Petugas</a></li>
+                            <li><a href="#">Peminjaman</a></li>
                             <li class="active">Tambah</li>
                         </ol>
                     </div>
@@ -32,7 +32,7 @@
                       </div>
                       
                       <div class="card-body card-block">
-
+                        
                       	<form action="<?php echo base_url(); ?>adm/pinjam_tambah/" method="post">
 
                           <div class="row form-group">
@@ -50,7 +50,7 @@
                             	<label for="text-input" class=" form-control-label">Kode transaksi</label>
                             </div>
                             <div class="col-12 col-md-3">
-                            	<input type="text" id="text-input" name="id_transaksi" class="form-control">
+                            	<input type="text" id="text-input" name="kode_transaksi" class="form-control" placeholder="Kode Transaksi">
                             	<small class="form-text text-muted">Kode Transaksi</small>
                             </div>
                           </div>

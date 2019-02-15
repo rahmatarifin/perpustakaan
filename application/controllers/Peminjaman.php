@@ -82,6 +82,8 @@ class Peminjaman extends ci_controller{
 			$denda = ($selisih-7)*1000;
 		}
 
+		
+
 		$id_tr = $this->input->post('kode_transaksi');
 		$data = array(
 			'nis' => $this->input->post('nis'),
@@ -92,7 +94,7 @@ class Peminjaman extends ci_controller{
 			'status' => $this->input->post('status')
 			);
 		$this->m_peminjaman->update($id_tr, $data);
-		redirect('peminjaman');
+		redirect('peminjaman/data_kembali');
 	}
 
 
@@ -111,6 +113,50 @@ class Peminjaman extends ci_controller{
 		$id_tr = $this->uri->segment(3);
 		$data['join'] = $this->m_peminjaman->per_id($id_tr);
 		$this->load->view('pinjam/detail_transaksi', $data);
+		$this->load->view('templates/v_footer');
+	}
+
+	function data_pinjam(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
+		$status = 'pinjam';
+		$data['join'] = $this->m_peminjaman->bystatus($status);
+		$this->load->view('pinjam/data_pinjam', $data);
+		$this->load->view('templates/v_footer');
+	}
+
+	function data_kembali(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
+		$status = 'kembali';
+		$data['join'] = $this->m_peminjaman->bystatus($status);
+		$this->load->view('kembali/data_kembali', $data);
+		$this->load->view('templates/v_footer');
+	}
+
+	function cari_transaksi(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
+//		$nis = $this->input->post('nis');
+		$kode_buku = $this->input->post('kode_buku');
+		$data['join'] = $this->m_peminjaman->per_nis( $kode_buku);
+		$this->load->view('kembali/pengembalian', $data);
+		$this->load->view('templates/v_footer');	
+
+	}
+
+	function balik(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan_petugas');
+		$this->load->view('templates/r_header', $data);
+		$this->load->view('kembali/back');
 		$this->load->view('templates/v_footer');
 	}
 }

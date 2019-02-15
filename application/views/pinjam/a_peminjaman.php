@@ -63,7 +63,7 @@
                         <td><?php echo $pinjam->denda; ?></td>
                         <td><?php echo $pinjam->status; ?></td>
                         <td>
-                            <a href="<?php base_url();?>adm/pengembalian/<?php echo $pinjam->kode_transaksi; ?>">
+                            <a href="<?php echo base_url();?>adm/pengembalian/<?php echo $pinjam->kode_transaksi; ?>">
                                 <i class="btn btn-primary">Kembali</i>
                             </a>
                         </td>

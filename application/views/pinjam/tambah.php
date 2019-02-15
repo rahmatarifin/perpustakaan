@@ -12,7 +12,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Petugas</a></li>
+                            <li><a href="#">Peminjaman</a></li>
                             <li class="active">Tambah</li>
                         </ol>
                     </div>

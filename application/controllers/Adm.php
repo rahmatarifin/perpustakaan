@@ -254,6 +254,15 @@ class Adm extends ci_controller
 	
 	}
 
+	function a_balik(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header', $data);
+		$this->load->view('kembali/a_back');
+		$this->load->view('templates/v_footer');
+	}
+
 	function pengembalian(){
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
@@ -298,16 +307,51 @@ class Adm extends ci_controller
 		redirect('adm/pinjam');
 	}
 
-	function detai_transaksi(){
+	function detail_transaksi(){
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header', $data);
 		$id_tr = $this->uri->segment(3);
 		$data['join'] = $this->m_peminjaman->per_id($id_tr);
-		$this->load->view('pinjam/detai_transaksi', $data);
+		$this->load->view('kembali/a_detail_kembali', $data);
 		$this->load->view('templates/v_footer');
 
+	}
+
+
+	function data_pinjam(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header', $data);
+		$status = 'pinjam';
+		$data['join'] = $this->m_peminjaman->bystatus($status);
+		$this->load->view('pinjam/a_data_pinjam', $data);
+		$this->load->view('templates/v_footer');
+	}
+
+	function data_kembali(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header', $data);
+		$status = 'kembali';
+		$data['join'] = $this->m_peminjaman->bystatus($status);
+		$this->load->view('kembali/a_data_kembali', $data);
+		$this->load->view('templates/v_footer');
+	}
+
+	function cari_transaksi(){
+		$data['username'] = $this->session->userdata('username');
+		$this->load->view('templates/v_head');
+		$this->load->view('templates/leftpan');
+		$this->load->view('templates/r_header', $data);
+//		$nis = $this->input->post('nis');
+		$kode_buku = $this->input->post('kode_buku');
+		$data['join'] = $this->m_peminjaman->per_nis( $kode_buku);
+		$this->load->view('kembali/a_pengembalian', $data);
+		$this->load->view('templates/v_footer');		
 	}
 
 	function logout(){
