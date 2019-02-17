@@ -69,7 +69,13 @@
                               <label for="text-input" class=" form-control-label">Tahun Terbit</label>
                             </div>
                             <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="tahun_terbit" value="<?php echo $buku->tahun_terbit; ?>" class="form-control">
+                              <select name="tahun_terbit" id="select" class="form-control">
+                              <option selected="selected" value="<?php echo $buku->tahun_terbit; ?>"><?php echo $buku->tahun_terbit; ?></option>
+                                <?php for($i=date('Y'); $i>=date('Y')-32; $i-=1){
+                                  echo "<option value='$i'>$i</option>";
+                                }
+                                ?>
+                              </select>
                               <small class="form-text text-muted">Tahun Terbit</small>
                             </div>
                           </div>
@@ -99,8 +105,9 @@
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Jenis Kategori</label></div>
                             <div class="col-12 col-md-9">
                               <select name="kode_kategori" id="select" class="form-control">
+                              <option value="<?php echo $buku->kode_kategori; ?>"><?php echo $kategori->jenis_kategori; ?></option>
                                 <?php foreach ($dd_kategori as $kategori) {
-                                echo '<option value="'.$kategori->kode_kategori.'">'.$kategori->kategori.'</option>';
+                                echo '<option value="'.$kategori->kode_kategori.'">'.$kategori->jenis_kategori.'</option>';
                                 }?>
                                 
                               </select>

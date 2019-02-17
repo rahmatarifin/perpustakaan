@@ -27,8 +27,8 @@ class Peminjaman extends ci_controller{
 		$this->load->view('templates/leftpan_petugas');
 		$this->load->view('templates/r_header', $data);
 		$kode_ = $this->uri->segment(3);
+		$data['kode_trans'] = $this->m_peminjaman->kode_trans();
 		$data['kode_buku'] = $this->m_peminjaman->cari_buku($kode_);
-		$data['kode_transaksi'] = $this->m_peminjaman->get_kode();
 		$this->load->view('pinjam/tambah', $data);
 		$this->load->view('templates/v_footer');
 	}

@@ -11,6 +11,8 @@ class Buku_ extends ci_controller{
 		}
 	}
 
+
+
 	function index(){
 		$data['title'] = 'Data Buku';
 		$data['username'] = $this->session->userdata('username');
@@ -23,12 +25,15 @@ class Buku_ extends ci_controller{
 	}
 
 	function tambahbuku(){
+		$data['kode'] = $this->m_buku_->kode();
+
 		$data['username'] = $this->session->userdata('username');
 		$data['title'] = 'Form Tambah Buku';
 		$this->load->view('templates/v_head', $data);
 		$this->load->view('templates/leftpan_petugas');
 		$this->load->view('templates/r_header', $data);
 		$kode_k = $this->uri->segment(3);
+		$data['tampil'] = $this->m_buku_->tampildata();
 		$data['dd_kategori'] = $this->m_buku_->getdd();
 		$this->load->view('buku/tambah', $data);
 		$this->load->view('templates/v_footer');

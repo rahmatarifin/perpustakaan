@@ -39,7 +39,7 @@
                             	<label for="text-input" class=" form-control-label">Kode Buku</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="kode_buku" placeholder="kode Buku" class="form-control">
+                            	<input type="text" id="text-input" name="kode_buku" value="<?php echo $kode; ?>"  class="form-control">
                             	<small class="form-text text-muted">Kode Buku</small>
                             </div>
                           </div>

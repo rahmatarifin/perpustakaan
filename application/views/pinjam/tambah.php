@@ -50,7 +50,7 @@
                             	<label for="text-input" class=" form-control-label">Kode transaksi</label>
                             </div>
                             <div class="col-12 col-md-3">
-                            	<input type="text" id="text-input" name="id_transaksi" class="form-control">
+                            	<input type="text" id="text-input" name="id_transaksi" value="<?php echo $kode_trans; ?>" class="form-control">
                             	<small class="form-text text-muted">Kode Transaksi</small>
                             </div>
                           </div>

@@ -9,9 +9,23 @@ class M_peminjaman extends ci_model{
 		}
 	}
 
-	function get_kode(){
-		$q = $this->db->select('max((RIGHT(kode_transaksi, 4)) as kd_max)');
-
+		public function kode_trans(){
+		  $this->db->select('RIGHT(buku.kode_buku,2) as kode_buku', FALSE);
+		  $this->db->order_by('kode_buku','DESC');    
+		  $this->db->limit(1);    
+		  $query = $this->db->get('buku');  //cek dulu apakah ada sudah ada kode di tabel.    
+		  if($query->num_rows() <> 0){      
+			   //cek kode jika telah tersedia    
+			   $data = $query->row();      
+			   $kode = intval($data->kode_buku) + 1; 
+		  }
+		  else{      
+			   $kode = 1;  //cek jika kode belum terdapat pada table
+		  }
+			  $tgl=date('dmY'); 
+			  $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);    
+			  $kodetampil = "TR"."5".$tgl.$batas;  //format kode
+			  return $kodetampil;  
 	}
 
 	function per_id($id_tr){
@@ -75,7 +89,7 @@ class M_peminjaman extends ci_model{
 		$this->db->where('tanggal_pinjam <=', $tgl_akhir);
 		$this->db->where('status', $status);
 		$query= $this->db->get();
-		if ($query->num_rows()>0) {
+		if ($query->num_rows()>=0) {
 			return $query->result();
 		}else{
 			return array();
@@ -130,8 +144,8 @@ class M_peminjaman extends ci_model{
 		$this->db->from('transaksi');
 		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
 		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
-		$this->db->where('tanggal_pinjam >=', $tgl_awal);
-		$this->db->where('tanggal_pinjam <=', $tgl_akhir);
+		$this->db->where('tanggal_pinjam >==', $tgl_awal);
+		$this->db->where('tanggal_pinjam <==', $tgl_akhir);
 		$query = $this->db->get();
 		if($query->num_rows()>0){
 			return $query->result();

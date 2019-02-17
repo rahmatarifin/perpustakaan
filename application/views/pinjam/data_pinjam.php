@@ -27,7 +27,7 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
-                            <a href="<?php echo base_url(); ?>adm/tambahpinjam"><button class="btn btn-primary">Tambah</button></a>
+                            <a href="<?php echo base_url(); ?>peminjaman/add_pinjam"><button class="btn btn-primary">Tambah</button></a>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">

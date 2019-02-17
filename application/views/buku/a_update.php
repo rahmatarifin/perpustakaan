@@ -99,8 +99,9 @@
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Jenis Kategori</label></div>
                             <div class="col-12 col-md-9">
                               <select name="kode_kategori" id="select" class="form-control">
+                              <option selected="selected">--Pilih--</option>
                                 <?php foreach ($dd_kategori as $kategori) {
-                                echo '<option value="'.$kategori->kode_kategori.'">'.$kategori->kategori.'</option>';
+                                echo '<option value="'.$kategori->kode_kategori.'">'.$kategori->jenis_kategori.'</option>';
                                 }?>
                                 
                               </select>

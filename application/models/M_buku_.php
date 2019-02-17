@@ -1,14 +1,6 @@
 <?php
 class M_buku_ extends ci_model{
-	function tampil(){
-		$query->this->db->get('buku');
-		if($query->num_rows()>0){
-			return $query->result();
-		}else{
-			return array();
-		}
 
-	}
 	function tampildata(){
 		$this->db->select('*');
 		$this->db->from('buku');
@@ -20,6 +12,25 @@ class M_buku_ extends ci_model{
 		}else{
 			return array();
 		}
+	}
+
+	public function kode(){
+		  $this->db->select('RIGHT(buku.kode_buku,2) as kode_buku', FALSE);
+		  $this->db->order_by('kode_buku','DESC');    
+		  $this->db->limit(1);    
+		  $query = $this->db->get('buku');  //cek dulu apakah ada sudah ada kode di tabel.    
+		  if($query->num_rows() <> 0){      
+			   //cek kode jika telah tersedia    
+			   $data = $query->row();      
+			   $kode = intval($data->kode_buku) + 1; 
+		  }
+		  else{      
+			   $kode = 1;  //cek jika kode belum terdapat pada table
+		  }
+			  $tgl=date('dmY'); 
+			  $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);    
+			  $kodetampil = "BR"."5".$tgl.$batas;  //format kode
+			  return $kodetampil;  
 	}
 
 
