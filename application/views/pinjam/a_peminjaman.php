@@ -43,7 +43,6 @@
                         <th>Pengarang</th>
                         <th>Denda</th>
                         <th>Status</th>
-                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -62,11 +61,6 @@
                         <td><?php echo $pinjam->pengarang; ?></td>
                         <td><?php echo $pinjam->denda; ?></td>
                         <td><?php echo $pinjam->status; ?></td>
-                        <td>
-                            <a href="<?php echo base_url();?>adm/pengembalian/<?php echo $pinjam->kode_transaksi; ?>">
-                                <i class="btn btn-primary">Kembali</i>
-                            </a>
-                        </td>
                       </tr>
                     <?php endforeach; ?>
                     </tbody>

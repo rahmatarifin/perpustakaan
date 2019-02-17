@@ -26,7 +26,7 @@
                     <div class="card">
                         <div class="card-header">
                         <strong class="card-title">Data Kategori</strong>
-                            <a href="<?php echo base_url(); ?>kategori/tambah"><button type="button" class="btn btn-primary">Tambah</button></a>
+                            <a href="<?php echo base_url(); ?>kategori/tambahkategori"><button type="button" class="btn btn-primary">Tambah</button></a>
 
                         </div>
                         <div class="card-body">

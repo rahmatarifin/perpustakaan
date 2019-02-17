@@ -143,7 +143,7 @@ class Peminjaman extends ci_controller{
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan_petugas');
 		$this->load->view('templates/r_header', $data);
-//		$nis = $this->input->post('nis');
+		$nis = $this->input->post('nis');
 		$kode_buku = $this->input->post('kode_buku');
 		$data['join'] = $this->m_peminjaman->per_nis( $kode_buku);
 		$this->load->view('kembali/pengembalian', $data);

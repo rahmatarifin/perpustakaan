@@ -40,8 +40,8 @@
                             	<label for="text-input" class=" form-control-label">NIS</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="nis" placeholder="Nomor induk mahasiswa" class="form-control">
-                            	<small class="form-text text-muted">Nomor induk mahasiswa</small>
+                            	<input type="text" id="text-input" name="nis" placeholder="Nomor induk siswa" class="form-control">
+                            	<small class="form-text text-muted">Nomor induk Siswa</small>
                             </div>
                           </div>
 

@@ -21,9 +21,10 @@ class Adm extends ci_controller
 
 	function index(){
 		//$this->load->view('web_dinamis');
+		$data['title'] = 'Dashboard';
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('templates/v_head');
-		$this->load->view('templates/leftpan');
+		$this->load->view('templates/leftpan', $data);
 		$this->load->view('templates/r_header', $data);
 		$this->load->view('templates/r_panel');
 		$this->load->view('templates/v_footer');
@@ -34,6 +35,7 @@ class Adm extends ci_controller
 
 	function anggota(){
 		$data['username'] = $this->session->userdata('username');
+		$data['title'] = 'Anggota';
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header', $data);
@@ -44,7 +46,8 @@ class Adm extends ci_controller
 
 	function tambahanggota(){
 		$data['username'] = $this->session->userdata('username');
-		$this->load->view('templates/v_head');
+		$data['title'] = 'form tambah anggota';
+		$this->load->view('templates/v_head', $data);
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header', $data);
 		$this->load->view('anggota/a_tambah');
@@ -62,7 +65,7 @@ class Adm extends ci_controller
 			);
 
 		$this->m_anggota->tambah($data);
-		redirect('adm/a_anggota');
+		redirect('adm/anggota');
 	}
 
 	function editanggota(){
@@ -184,7 +187,7 @@ class Adm extends ci_controller
 	}
 
 	function kategori_tambah(){
-		$data = array('kode_kategori' => $this->input->post('kode_kategori'),
+		$data = array(
 			'jenis_kategori' => $this->input->post('jenis_kategori')
 			);
 

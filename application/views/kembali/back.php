@@ -37,6 +37,17 @@
 
                           <div class="row form-group">
                             <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">NIS</label>
+                            </div>
+                            <div class="col-12 col-md-3">
+                              <input type="text" id="text-input" name="nis" class="form-control" placeholder="Kode Buku" >
+                              <small class="form-text text-muted">Nomor induk siswa</small>
+                            </div>
+                          </div>
+
+
+                          <div class="row form-group">
+                            <div class="col col-md-3">
                               <label for="text-input" class=" form-control-label">Kode Buku</label>
                             </div>
                             <div class="col-12 col-md-3">

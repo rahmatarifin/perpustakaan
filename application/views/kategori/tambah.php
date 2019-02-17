@@ -41,7 +41,7 @@
                             	<label for="text-input" class=" form-control-label">Kategori</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            	<input type="text" id="text-input" name="kategori" placeholder="judul buku" class="form-control">
+                            	<input type="text" id="text-input" name="jenis_kategori" placeholder="Kategori buku" class="form-control">
                             	<small class="form-text text-muted">kategori buku </small>
                             </div>
                           </div>

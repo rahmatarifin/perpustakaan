@@ -32,7 +32,7 @@ class Kategori extends ci_controller{
 
 	function add(){
 		$data = array(
-			'kategori' => $this->input->post('kategori')
+			'jenis_kategori' => $this->input->post('jenis_kategori')
 		);
 
 		$this->m_kategori->tambah($data);
