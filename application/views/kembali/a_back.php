@@ -34,6 +34,15 @@
                       <div class="card-body card-block">
 
                         <form action="<?php echo base_url(); ?>adm/cari_transaksi/" method="post">
+                          <div class="row form-group">
+                            <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">NIS</label>
+                            </div>
+                            <div class="col-12 col-md-3">
+                              <input type="text" id="text-input" name="nis" class="form-control" placeholder="Nomor induk siswa" >
+                              <small class="form-text text-muted">Nomor Induk Siswa</small>
+                            </div>
+                          </div>
 
                           <div class="row form-group">
                             <div class="col col-md-3">

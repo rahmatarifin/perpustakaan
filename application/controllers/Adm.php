@@ -116,6 +116,8 @@ class Adm extends ci_controller
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header', $data);
 		$kode_k = $this->uri->segment(3);
+		$data['kode_buku'] = $this->m_buku_->kode();
+		$data['tampil'] = $this->m_buku_->tampildata();
 		$data['dd_kategori'] = $this->m_buku_->getdd();
 		$this->load->view('buku/a_tambah', $data);
 		$this->load->view('templates/v_footer');
@@ -238,6 +240,7 @@ class Adm extends ci_controller
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header', $data);
 		$kode_ = $this->uri->segment(3);
+		$data['kode_trans'] = $this->m_peminjaman->kode_trans();
 		$data['kode_buku'] = $this->m_peminjaman->cari_buku($kode_);
 		$this->load->view('pinjam/a_tambah', $data);
 		$this->load->view('templates/v_footer');
@@ -253,7 +256,7 @@ class Adm extends ci_controller
 				'status' => $this->input->post('status')
 			);
 		$this->m_peminjaman->pinjam($data);
-		redirect('adm/pinjam');
+		redirect('adm/data_pinjam');
 	
 	}
 
@@ -350,9 +353,9 @@ class Adm extends ci_controller
 		$this->load->view('templates/v_head');
 		$this->load->view('templates/leftpan');
 		$this->load->view('templates/r_header', $data);
-//		$nis = $this->input->post('nis');
+		$nis = $this->input->post('nis');
 		$kode_buku = $this->input->post('kode_buku');
-		$data['join'] = $this->m_peminjaman->per_nis( $kode_buku);
+		$data['join'] = $this->m_peminjaman->per_nis($nis, $kode_buku);
 		$this->load->view('kembali/a_pengembalian', $data);
 		$this->load->view('templates/v_footer');		
 	}

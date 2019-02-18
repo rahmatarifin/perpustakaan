@@ -40,7 +40,8 @@
                               <label for="text-input" class=" form-control-label">Tanggal Pinjam</label>
                             </div>
                             <div class="col-12 col-md-3">
-                              <input type="text" id="text-input" name="tanggal_pinjam" class="form-control" value="<?php echo date('Y-m-d G:i:s'); ?>" >
+                              <input type="text" id="text-input" name="tanggal_pinjam" class="form-control" value="<?php $timezone = time()+(60*60*7);
+                              echo date('Y-m-d G:i:s', $timezone); ?>" >
                               <small class="form-text text-muted">Tanggal Peminjaman Buku</small>
                             </div>
                           </div>

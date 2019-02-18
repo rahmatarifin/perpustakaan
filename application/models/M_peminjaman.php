@@ -10,14 +10,14 @@ class M_peminjaman extends ci_model{
 	}
 
 		public function kode_trans(){
-		  $this->db->select('RIGHT(buku.kode_buku,2) as kode_buku', FALSE);
-		  $this->db->order_by('kode_buku','DESC');    
+		  $this->db->select('RIGHT(transaksi.kode_transaksi,2) as kode_transaksi', FALSE);
+		  $this->db->order_by('kode_transaksi','DESC');    
 		  $this->db->limit(1);    
-		  $query = $this->db->get('buku');  //cek dulu apakah ada sudah ada kode di tabel.    
+		  $query = $this->db->get('transaksi');  //cek dulu apakah ada sudah ada kode di tabel.    
 		  if($query->num_rows() <> 0){      
 			   //cek kode jika telah tersedia    
 			   $data = $query->row();      
-			   $kode = intval($data->kode_buku) + 1; 
+			   $kode = intval($data->kode_transaksi) + 1; 
 		  }
 		  else{      
 			   $kode = 1;  //cek jika kode belum terdapat pada table
@@ -41,12 +41,12 @@ class M_peminjaman extends ci_model{
 
 	}
 
-	function per_nis($kode_buku){
+	function per_nis($nis, $kode_buku){
 		$this->db->select('*');
 		$this->db->from('transaksi');
 		$this->db->join('buku', 'buku.kode_buku=transaksi.kode_buku');
 		$this->db->join('anggota', 'anggota.nis=transaksi.nis');
-		//$this->db->where('nis', $nis);
+		$this->db->where('transaksi.nis', $nis);
 		$this->db->where('transaksi.kode_buku', $kode_buku);
 		$query = $this->db->get();
 		return $query->result();
